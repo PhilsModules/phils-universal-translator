@@ -1,4 +1,4 @@
-# Changelog & Updates: Phil's Universal AI Translator
+# Changelog & Updates: Phil's Universal Translator
 
 All notable changes and version milestones for the module will be documented here.
 

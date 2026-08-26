@@ -8,7 +8,7 @@ export class GlossarySearchApp extends HandlebarsApplicationMixin(ApplicationV2)
         id: "universal-glossary-search",
         tag: "form",
         window: {
-            title: "Universal AI Glossar — Suche & Begriff-Manager",
+            title: "Universal Glossar — Suche & Begriff-Manager",
             icon: "fas fa-book-bookmark",
             resizable: true,
             contentClasses: ["universal-translator-window", "standard-form"]

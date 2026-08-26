@@ -1,4 +1,4 @@
-# Phil's Universal AI Translator — Foundry VTT Package Description
+# Phil's Universal Translator — Foundry VTT Package Description
 
 Below is the clean, human-written description formatted for the official Foundry VTT package directory and community listing.
 
@@ -11,7 +11,7 @@ Universal, AI-powered multilingual translation helper for any tabletop RPG syste
 
 ## Full Description (for Foundry VTT Package Page)
 
-Phil's Universal AI Translator provides game masters with a structured, reliable way to translate adventure modules, journals, items, actors, folders, and compendium packs into any language directly inside Foundry VTT.
+Phil's Universal Translator provides game masters with a structured, reliable way to translate adventure modules, journals, items, actors, folders, and compendium packs into any language directly inside Foundry VTT.
 
 Unlike traditional translation modules that require paid API subscriptions or complex key configurations, this module operates as an intelligent local bridge between your world data and modern web-based AI services (including Google Gemini, ChatGPT, Claude, Microsoft Copilot, and Perplexity). You retain complete control over your content with zero recurring costs.
 

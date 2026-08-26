@@ -1,10 +1,10 @@
-# Functional Overview: Phil's Universal AI Translator
+# Functional Overview: Phil's Universal Translator
 
 <div align="right">
   <a href="funktion.md">Zur deutschen Funktionsübersicht wechseln</a>
 </div>
 
-This overview explains how Phil's Universal AI Translator operates under the hood, how it avoids recurring API costs, and how it protects your game data throughout the translation lifecycle.
+This overview explains how Phil's Universal Translator operates under the hood, how it avoids recurring API costs, and how it protects your game data throughout the translation lifecycle.
 
 ---
 
@@ -12,7 +12,7 @@ This overview explains how Phil's Universal AI Translator operates under the hoo
 
 Direct AI API integrations often introduce recurring subscription costs, usage limits, and account restrictions when working through extensive adventure books.
 
-Phil's Universal AI Translator solves this by decoupling translation from paid API endpoints:
+Phil's Universal Translator solves this by decoupling translation from paid API endpoints:
 
 1. **Structured Preparation:** The module extracts your content, marks internal Foundry links (`@UUID`, `@Embed`, roll formulas) for protection, inserts relevant campaign glossary entries, and formats everything into a clean, optimized prompt.
 2. **Web AI Execution:** A single click copies the prompt to your clipboard and opens your chosen AI provider in your browser (such as Gemini or ChatGPT).

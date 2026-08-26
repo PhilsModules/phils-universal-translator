@@ -86,7 +86,7 @@ export class TranslationStudioApp extends HandlebarsApplicationMixin(Application
         id: "universal-translation-studio",
         tag: "form",
         window: {
-            title: "Phil's Universal AI Translation Studio",
+            title: "Phil's Universal Translation Studio",
             icon: "fas fa-language",
             resizable: true,
             contentClasses: ["universal-translator-window", "standard-form"]

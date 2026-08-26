@@ -1,10 +1,10 @@
-# Ausführliche Anleitung: Phil's Universal AI Translator (v1.0.0)
+# Ausführliche Anleitung: Phil's Universal Translator (v1.0.0)
 
 <div align="right">
   <a href="guide.md">Switch to English Guide</a>
 </div>
 
-Phil's Universal AI Translator ermöglicht es Spielleitungen, Journale, Items, Akteure, Ordner und Kompendien jedes beliebigen Rollenspielsystems mit modernen KI-Modellen (Gemini, ChatGPT, Claude, Copilot, Perplexity) ohne laufende API-Kosten konsistent und rollenspielgerecht in beliebige Zielsprachen zu übersetzen.
+Phil's Universal Translator ermöglicht es Spielleitungen, Journale, Items, Akteure, Ordner und Kompendien jedes beliebigen Rollenspielsystems mit modernen KI-Modellen (Gemini, ChatGPT, Claude, Copilot, Perplexity) ohne laufende API-Kosten konsistent und rollenspielgerecht in beliebige Zielsprachen zu übersetzen.
 
 ---
 
@@ -12,7 +12,7 @@ Phil's Universal AI Translator ermöglicht es Spielleitungen, Journale, Items, A
 
 1. **Modul aktivieren:** Aktiviere das Modul in deiner Foundry VTT Welt unter **Einstellungen** > **Module verwalten**.
 2. **Modul-Einstellungen anpassen:**
-   - Öffne **Einstellungen** > **Modul-Einstellungen** > **Phil's Universal AI Translator**.
+   - Öffne **Einstellungen** > **Modul-Einstellungen** > **Phil's Universal Translator**.
    - **KI-Anbieter:** Wähle deinen bevorzugten Dienst (Google Gemini, ChatGPT, Claude, Copilot, Perplexity).
    - **Standard-Zielsprache:** Wähle deine Haupt-Zielsprache (z. B. Deutsch, Französisch, Spanisch, Italienisch, Polnisch, Ukrainisch, Japanisch, Englisch oder Benutzerdefiniert).
    - **Standard-Quellsprache:** Automatische Erkennung oder feste Ausgangssprache.

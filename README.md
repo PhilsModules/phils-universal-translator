@@ -1,6 +1,6 @@
 <div align="center">
 
-# Phil's Universal AI Translator
+# Phil's Universal Translator
 
 ![Foundry v12 Compatible](https://img.shields.io/badge/Foundry-v12-green)
 ![Foundry v13 Compatible](https://img.shields.io/badge/Foundry-v13-brightgreen)
@@ -35,7 +35,7 @@
 
 # English Documentation
 
-Phil's Universal AI Translator brings high-quality, context-aware translations to your Foundry VTT world without subscription fees or API billing. By acting as a structured bridge between your game data and modern large language models (such as Google Gemini, ChatGPT, Claude, Microsoft Copilot, and Perplexity), the module prepares, protects, and restores your adventure content seamlessly.
+Phil's Universal Translator brings high-quality, context-aware translations to your Foundry VTT world without subscription fees or API billing. By acting as a structured bridge between your game data and modern large language models (such as Google Gemini, ChatGPT, Claude, Microsoft Copilot, and Perplexity), the module prepares, protects, and restores your adventure content seamlessly.
 
 Detailed references:
 * [User Guide (guide.md)](guide.md) - Step-by-step tutorial for all features.
@@ -79,7 +79,7 @@ Detailed references:
 
 # Deutsche Dokumentation
 
-Phil's Universal AI Translator ermöglicht hochwertige, kontextsensitive Übersetzungen für Foundry VTT ohne laufende API-Kosten oder Abonnements. Das Modul bereitet Abenteuerinhalte strukturiert für Web-KIs (Google Gemini, ChatGPT, Claude, Copilot, Perplexity) vor, schützt alle internen Verlinkungen und fügt übersetzte Inhalte präzise wieder in deine Welt ein.
+Phil's Universal Translator ermöglicht hochwertige, kontextsensitive Übersetzungen für Foundry VTT ohne laufende API-Kosten oder Abonnements. Das Modul bereitet Abenteuerinhalte strukturiert für Web-KIs (Google Gemini, ChatGPT, Claude, Copilot, Perplexity) vor, schützt alle internen Verlinkungen und fügt übersetzte Inhalte präzise wieder in deine Welt ein.
 
 Weiterführende Handbücher:
 * [Ausführliche Anleitung (anleitung.md)](anleitung.md) - Schritt-für-Schritt-Handbuch für alle Werkzeuge.
@@ -123,7 +123,7 @@ Weiterführende Handbücher:
 
 # License & Support
 
-Phil's Universal AI Translator is open-source software licensed under the [GNU General Public License v3.0](LICENSE).
+Phil's Universal Translator is open-source software licensed under the [GNU General Public License v3.0](LICENSE).
 
 <div align="center">
     <h3>Support the Project</h3>

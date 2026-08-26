@@ -1,10 +1,10 @@
-# Systemarchitektur: Phil's Universal AI Translator
+# Systemarchitektur: Phil's Universal Translator
 
 <div align="right">
   <a href="architecture.md">Switch to English Architecture</a>
 </div>
 
-Eine detaillierte Dokumentation der Softwarearchitektur, Datenstrukturen und Verarbeitungs-Pipelines von **Phil's Universal AI Translator** für Foundry Virtual Tabletop (v14 ready).
+Eine detaillierte Dokumentation der Softwarearchitektur, Datenstrukturen und Verarbeitungs-Pipelines von **Phil's Universal Translator** für Foundry Virtual Tabletop (v14 ready).
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "id": "phils-universal-translator",
-  "title": "Phil's Universal AI Translator",
+  "title": "Phil's Universal Translator",
   "description": "Universal, AI-powered multilingual translation helper for any tabletop RPG system in Foundry VTT (v14 ready) featuring dynamic lore glossary, update-proof translation memory, non-destructive runtime overlay, narrative read-aloud translation, campaign auditor, and side-by-side diff previews.",
   "version": "1.0.0",
   "compatibility": {

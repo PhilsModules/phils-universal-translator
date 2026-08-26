@@ -1,10 +1,10 @@
-# Funktionsweise: Phil's Universal AI Translator
+# Funktionsweise: Phil's Universal Translator
 
 <div align="right">
   <a href="how-it-works.md">Switch to English Overview</a>
 </div>
 
-Diese Übersicht erklärt das Funktionsprinzip von Phil's Universal AI Translator: wie das Modul ohne laufende API-Kosten arbeitet und wie es deine Kampagnendaten während des Übersetzungsprozesses absichert.
+Diese Übersicht erklärt das Funktionsprinzip von Phil's Universal Translator: wie das Modul ohne laufende API-Kosten arbeitet und wie es deine Kampagnendaten während des Übersetzungsprozesses absichert.
 
 ---
 
@@ -12,7 +12,7 @@ Diese Übersicht erklärt das Funktionsprinzip von Phil's Universal AI Translato
 
 Direkte API-Schnittstellen für KI-Modelle verursachen oft laufende Kosten, Kontolimits und Sperren, wenn man umfangreiche Regel- oder Abenteuerbände verarbeitet.
 
-Phil's Universal AI Translator umgeht diese Hürden durch eine intelligente lokale Vorbereitung:
+Phil's Universal Translator umgeht diese Hürden durch eine intelligente lokale Vorbereitung:
 
 1. **Strukturierte Aufbereitung:** Das Modul scannt dein Dokument, maskiert geschützte Foundry-Verlinkungen (`@UUID`, `@Embed`, Würfelformeln), setzt bisherige Glossarbegriffe ein und formuliert einen optimierten Prompt.
 2. **Kopieren & KI öffnen:** Ein Klick befördert den Prompt in die Zwischenablage und öffnet die kostenlose Weboberfläche deines bevorzugten Anbieters (z. B. Gemini oder ChatGPT) im Browser.

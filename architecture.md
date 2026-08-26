@@ -1,10 +1,10 @@
-# System Architecture: Phil's Universal AI Translator
+# System Architecture: Phil's Universal Translator
 
 <div align="right">
   <a href="funktionen.md">Zur deutschen Systemarchitektur wechseln</a>
 </div>
 
-A detailed technical specification of the software architecture, data structures, and processing pipelines of **Phil's Universal AI Translator** for Foundry Virtual Tabletop (v14 ready).
+A detailed technical specification of the software architecture, data structures, and processing pipelines of **Phil's Universal Translator** for Foundry Virtual Tabletop (v14 ready).
 
 ---
 
