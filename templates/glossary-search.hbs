@@ -1,0 +1,72 @@
+<div class="universal-ts-container universal-glossary-search-container">
+    <div class="universal-glossary-header">
+        <div class="universal-glossary-search-bar">
+            <div class="search-field-wrapper">
+                <i class="fas fa-magnifying-glass search-field-icon"></i>
+                <input type="text" id="universal-glossary-search-input" class="universal-input" value="{{searchQuery}}" placeholder="Begriff im Glossar suchen (Englisch oder Deutsch)..." autofocus>
+                {{#if searchQuery}}
+                <button type="button" class="clear-search-btn" data-action="clearSearch"><i class="fas fa-times"></i></button>
+                {{/if}}
+            </div>
+
+            <button type="button" class="universal-btn universal-btn-primary" data-action="addTerm">
+                <i class="fas fa-plus"></i> Begriff hinzufügen
+            </button>
+            <button type="button" class="universal-btn" data-action="openGlossaryJournal">
+                <i class="fas fa-book-open"></i> Journal öffnen
+            </button>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="universal-glossary-pills-row">
+            {{#each categories}}
+            <button type="button" class="universal-pill-btn {{#if this.active}}active{{/if}}" data-action="filterCategory" data-cat-id="{{this.id}}">
+                {{this.label}} <span class="pill-count">({{this.count}})</span>
+            </button>
+            {{/each}}
+        </div>
+    </div>
+
+    <!-- Terms Table -->
+    <div class="universal-glossary-table-container">
+        {{#if terms.length}}
+        <table class="universal-glossary-table">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Original (Englisch)</th>
+                    <th style="width: 35%;">Übersetzung (Deutsch)</th>
+                    <th style="width: 20%;">Kategorie</th>
+                    <th style="width: 10%; text-align: right;">Aktionen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each terms}}
+                <tr>
+                    <td><strong>{{this.original}}</strong></td>
+                    <td>
+                        {{this.translation}}
+                        {{#if this.isProperName}}
+                        <span class="universal-badge universal-badge-small" style="color: #e67e22;">Eigenname</span>
+                        {{/if}}
+                    </td>
+                    <td><span class="universal-badge">{{this.category}}</span></td>
+                    <td style="text-align: right;">
+                        <button type="button" class="universal-btn-icon" data-action="editTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" data-trans="{{this.translation}}" title="Bearbeiten">
+                            <i class="fas fa-pen"></i>
+                        </button>
+                        <button type="button" class="universal-btn-icon text-danger" data-action="deleteTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" title="Löschen">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+        <div class="universal-search-empty">
+            <i class="fas fa-book-bookmark fa-2x"></i>
+            <p>Keine Begriffe gefunden.</p>
+        </div>
+        {{/if}}
+    </div>
+</div>

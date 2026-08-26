@@ -1,0 +1,101 @@
+<div class="universal-ts-container universal-search-container">
+    <div class="universal-search-header">
+        <div class="universal-search-inputs-grid">
+            <div class="search-input-group">
+                <label for="universal-search-input"><i class="fas fa-magnifying-glass text-accent"></i> Suchen nach:</label>
+                <input type="text" id="universal-search-input" class="universal-input" value="{{searchQuery}}" placeholder="Suchbegriff oder RegEx..." autofocus>
+            </div>
+
+            <div class="search-input-group">
+                <label for="universal-replace-input"><i class="fas fa-pen text-accent"></i> Ersetzen durch:</label>
+                <input type="text" id="universal-replace-input" class="universal-input" value="{{replaceQuery}}" placeholder="Ersatztext...">
+            </div>
+
+            <div class="search-input-group">
+                <label for="universal-journal-select"><i class="fas fa-book text-accent"></i> Suchbereich:</label>
+                <select id="universal-journal-select" class="universal-select">
+                    {{#each journalOptions}}
+                    <option value="{{this.id}}" {{#if (eq ../journalId this.id)}}selected{{/if}}>{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="universal-search-options-row">
+            <label class="universal-checkbox-label">
+                <input type="checkbox" id="universal-case-sensitive" {{#if caseSensitive}}checked{{/if}}>
+                Groß-/Kleinschreibung beachten
+            </label>
+            <label class="universal-checkbox-label">
+                <input type="checkbox" id="universal-use-regex" {{#if useRegex}}checked{{/if}}>
+                Regulärer Ausdruck (RegEx)
+            </label>
+
+            <div class="search-action-buttons">
+                <button type="button" class="universal-btn universal-btn-primary" data-action="executeSearch">
+                    <i class="fas fa-search"></i> Suchen
+                </button>
+                {{#if searchResults.length}}
+                <button type="button" class="universal-btn universal-btn-accent" data-action="replaceAll">
+                    <i class="fas fa-wand-magic-sparkles"></i> Alle ersetzen ({{totalMatches}})
+                </button>
+                {{/if}}
+                <button type="button" class="universal-btn" data-action="clearSearch">
+                    <i class="fas fa-times"></i> Zurücksetzen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results List -->
+    <div class="universal-search-results">
+        {{#if hasSearched}}
+            {{#if searchResults.length}}
+                <div class="results-summary-bar">
+                    <span><strong>{{totalMatches}}</strong> Treffer in <strong>{{matchedJournalsCount}}</strong> Journalen gefunden:</span>
+                </div>
+
+                {{#each searchResults}}
+                <div class="search-journal-block">
+                    <div class="search-journal-title">
+                        <i class="fas fa-book text-accent"></i> <strong>{{this.journalName}}</strong>
+                        <span class="universal-badge">{{this.matches.length}} Treffer</span>
+                    </div>
+
+                    {{#each this.pageMatches}}
+                    <div class="search-page-block">
+                        <div class="search-page-title">
+                            <i class="fas fa-file-lines"></i> Seite: <strong>{{this.pageName}}</strong>
+                            <button type="button" class="universal-btn-small" data-action="replaceSingle" data-journal-id="{{../journalId}}" data-page-id="{{this.pageId}}">
+                                Auf dieser Seite ersetzen
+                            </button>
+                            <button type="button" class="universal-btn-small" data-action="openJournalPage" data-journal-id="{{../journalId}}" data-page-id="{{this.pageId}}">
+                                Öffnen
+                            </button>
+                        </div>
+
+                        <div class="search-snippets-list">
+                            {{#each this.matches}}
+                            <div class="search-snippet-item">
+                                ...{{{this.snippet}}}...
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+            {{else}}
+                <div class="universal-search-empty">
+                    <i class="fas fa-magnifying-glass fa-2x"></i>
+                    <p>Keine Treffer für "{{searchQuery}}" gefunden.</p>
+                </div>
+            {{/if}}
+        {{else}}
+            <div class="universal-search-empty">
+                <i class="fas fa-keyboard fa-2x"></i>
+                <p>Gib oben einen Suchbegriff ein und klicke auf "Suchen".</p>
+            </div>
+        {{/if}}
+    </div>
+</div>

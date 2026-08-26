@@ -1,0 +1,130 @@
+<div class="universal-ts-container universal-auditor-container">
+    <!-- Header with Health Score -->
+    <div class="universal-auditor-header">
+        <div class="universal-auditor-title-area">
+            <i class="fas fa-shield-halved fa-2x text-accent"></i>
+            <div>
+                <h2>Kampagnen-Integritätsprüfung &amp; Auditor</h2>
+                <p class="universal-auditor-subtitle">Automatischer Vollständigkeits-, Link-, Kodierungs- und Backup-Check für alle Journale deiner Kampagne</p>
+            </div>
+        </div>
+
+        <div class="universal-auditor-health-badge {{healthColor}}">
+            <div class="universal-auditor-health-score">{{audit.overallHealth}}%</div>
+            <div class="universal-auditor-health-meta">
+                <span class="universal-auditor-health-label"><i class="fas {{healthIcon}}"></i> {{healthLabel}}</span>
+                <small>{{audit.totalCheckedPages}} Seiten geprüft</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats & Summary Cards -->
+    <div class="universal-auditor-stats-grid">
+        <div class="universal-auditor-stat-card stat-ok">
+            <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="stat-info">
+                <span class="stat-value">{{audit.intactCount}}</span>
+                <span class="stat-name">100% Intakt &amp; Vollständig</span>
+            </div>
+        </div>
+
+        <div class="universal-auditor-stat-card stat-warn">
+            <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="stat-info">
+                <span class="stat-value">{{audit.warningCount}}</span>
+                <span class="stat-name">Warnungen (Umlaute / Links)</span>
+            </div>
+        </div>
+
+        <div class="universal-auditor-stat-card stat-err">
+            <div class="stat-icon"><i class="fas fa-circle-xmark"></i></div>
+            <div class="stat-info">
+                <span class="stat-value">{{audit.errorCount}}</span>
+                <span class="stat-name">Kritisch (Fehlende Chunks)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1-Click Quick Repair Actions -->
+    <div class="universal-auditor-actions-bar">
+        <div class="actions-label">
+            <i class="fas fa-wand-magic-sparkles"></i> <strong>1-Klick Reparatur-Aktionen:</strong>
+        </div>
+        <div class="actions-buttons">
+            <button type="button" class="universal-btn universal-btn-accent" data-action="repairBackups" title="Sichert alle Backup-Flags ab">
+                <i class="fas fa-wrench"></i> Backups absichern
+            </button>
+            <button type="button" class="universal-btn universal-btn-primary" data-action="repairLinks" title="Biegt Kompendium-Links auf Welt-Dokumente um">
+                <i class="fas fa-link"></i> Verlinkungen reparieren
+            </button>
+            <button type="button" class="universal-btn universal-btn-secondary" data-action="repairMojibake" title="Repariert kaputte Umlaute und Sonderzeichen weltweit">
+                <i class="fas fa-font"></i> Umlaute reparieren
+            </button>
+            <button type="button" class="universal-btn universal-btn-secondary" data-action="refreshAudit">
+                <i class="fas fa-rotate"></i> Neu scannen
+            </button>
+        </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="universal-auditor-filter-tabs">
+        <button type="button" class="universal-auditor-filter-btn {{#if filterAllActive}}active{{/if}}" data-action="filterCategory" data-filter="all">
+            Alle Journale ({{audit.totalJournals}})
+        </button>
+        <button type="button" class="universal-auditor-filter-btn {{#if filterErrorActive}}active{{/if}}" data-action="filterCategory" data-filter="error">
+            🔴 Nur Fehler ({{audit.errorCount}})
+        </button>
+        <button type="button" class="universal-auditor-filter-btn {{#if filterWarningActive}}active{{/if}}" data-action="filterCategory" data-filter="warning">
+            🟡 Nur Warnungen ({{audit.warningCount}})
+        </button>
+        <button type="button" class="universal-auditor-filter-btn {{#if filterMojibakeActive}}active{{/if}}" data-action="filterCategory" data-filter="mojibake">
+            🔤 Umlaute / Kodierung
+        </button>
+    </div>
+
+    <!-- Detailed Journal & Page List -->
+    <div class="universal-auditor-journal-list">
+        {{#each filteredJournals}}
+        <div class="universal-auditor-journal-card">
+            <div class="universal-auditor-journal-header">
+                <div class="journal-title-box">
+                    <i class="fas fa-book text-accent"></i>
+                    <strong>{{this.name}}</strong>
+                    <span class="journal-stats-badge">{{this.pageAudits.length}} Seiten</span>
+                </div>
+                <div class="journal-actions-box">
+                    <button type="button" class="universal-btn-small" data-action="openStudioForJournal" data-journal-id="{{this.id}}" title="Im Translation Studio öffnen">
+                        <i class="fas fa-arrow-up-right-from-square"></i> Im Studio öffnen
+                    </button>
+                    <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreJournal" data-journal-id="{{this.id}}" title="Auf Backup-Stand zurücksetzen">
+                        <i class="fas fa-rotate-left"></i> Wiederherstellen
+                    </button>
+                </div>
+            </div>
+
+            <div class="universal-auditor-pages-table">
+                {{#each this.pageAudits}}
+                <div class="universal-auditor-page-row page-status-{{this.status}}">
+                    <div class="page-row-main">
+                        <span class="page-status-icon">
+                            {{#if (eq this.status 'ok')}}<i class="fas fa-check-circle text-success"></i>{{/if}}
+                            {{#if (eq this.status 'warning')}}<i class="fas fa-exclamation-triangle text-warn"></i>{{/if}}
+                            {{#if (eq this.status 'error')}}<i class="fas fa-circle-xmark text-danger"></i>{{/if}}
+                        </span>
+                        <strong class="page-name">{{this.name}}</strong>
+                    </div>
+
+                    {{#if this.issues.length}}
+                    <div class="page-row-issues">
+                        {{#each this.issues}}
+                        <span class="universal-badge universal-badge-warn"><i class="fas fa-circle-info"></i> {{this}}</span>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

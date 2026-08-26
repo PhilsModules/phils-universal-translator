@@ -1,0 +1,365 @@
+<div class="universal-ts-container">
+    <!-- Header Top Utility Bar -->
+    <div class="universal-ts-top-bar">
+        <div class="universal-ts-brand">
+            <i class="fas fa-language text-accent universal-pulse"></i>
+            <span class="universal-ts-brand-title">Universal Translation Studio</span>
+            <span class="universal-badge universal-badge-system">{{systemName}}</span>
+        </div>
+
+        <div class="universal-ts-header-tools">
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openAuditor" title="Kampagnen-Auditor: Scannt die gesamte Welt auf Vollständigkeit, Links & Umlaute">
+                <i class="fas fa-shield-halved"></i> Auditor
+            </button>
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="smartSync" title="Smart-Sync: Wendet unveränderte Übersetzungen nach einem Update blitzschnell wieder an">
+                <i class="fas fa-bolt"></i> Smart-Sync
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="remapLinks" title="Smart Link Remap: Biegt Kompendium-Links (@UUID/@Embed) auf bereits existierende Welt-Dokumente um">
+                <i class="fas fa-link"></i> Links Sync
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="exportMemory" title="Übersetzungs-Backup als JSON-Datei exportieren & sichern">
+                <i class="fas fa-download"></i> Backup
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="importMemory" title="Gesichertes Übersetzungs-Backup importieren">
+                <i class="fas fa-upload"></i> Import
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="clearMemory" title="Translation Memory & gespeicherte Übersetzungen komplett auf 0 zurücksetzen">
+                <i class="fas fa-trash-arrow-up"></i> Memory leeren
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="openSearch" title="Journal-weite Volltextsuche & Korrektur">
+                <i class="fas fa-search"></i> Suche
+            </button>
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openGlossarySearch" title="AI Glossar durchsuchen, filtern, bearbeiten & Begriffe verwalten">
+                <i class="fas fa-book-bookmark"></i> Glossar
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="sortGlossaryDialog" title="AI Glossar alphabetisch sortieren (A–Z / Z–A)">
+                <i class="fas fa-arrow-down-a-z"></i> Sortieren
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="openStats" title="Statistik öffnen">
+                <i class="fas fa-chart-line"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Stepper Bar -->
+    <div class="universal-ts-stepper">
+        <div class="universal-ts-step {{#if isStep1}}active{{/if}} {{#if (gt step 1)}}completed{{/if}}" data-action="jumpToStep" data-step="1">
+            <span class="universal-ts-step-num">1</span>
+            <span class="universal-ts-step-label">Dokument & Auswahl</span>
+        </div>
+        <div class="universal-ts-step-divider"></div>
+        <div class="universal-ts-step {{#if isStep2}}active{{/if}} {{#if (gt step 2)}}completed{{/if}}" data-action="jumpToStep" data-step="2">
+            <span class="universal-ts-step-num">2</span>
+            <span class="universal-ts-step-label">Prompt & KI</span>
+        </div>
+        <div class="universal-ts-step-divider"></div>
+        <div class="universal-ts-step {{#if isStep3}}active{{/if}} {{#if (gt step 3)}}completed{{/if}}" data-action="jumpToStep" data-step="3">
+            <span class="universal-ts-step-num">3</span>
+            <span class="universal-ts-step-label">Antwort</span>
+        </div>
+        <div class="universal-ts-step-divider"></div>
+        <div class="universal-ts-step {{#if isStep4}}active{{/if}}" data-action="jumpToStep" data-step="4">
+            <span class="universal-ts-step-num">4</span>
+            <span class="universal-ts-step-label">Vorschau & Speichern</span>
+        </div>
+    </div>
+
+    <!-- Step 1: Document Selection & Checklist -->
+    {{#if isStep1}}
+    <div class="universal-ts-card">
+        <!-- Mode & Language & Setting Presets -->
+        <div class="universal-ts-settings-bar">
+            <div class="universal-ts-mode-selector">
+                <label class="universal-ts-mode-label {{#if isModeTranslate}}selected{{/if}}">
+                    <input type="radio" name="mode" value="translate" {{#if isModeTranslate}}checked{{/if}}>
+                    <i class="fas fa-language"></i> Übersetzen
+                </label>
+                <label class="universal-ts-mode-label {{#if isModeGrammar}}selected{{/if}}">
+                    <input type="radio" name="mode" value="grammar" {{#if isModeGrammar}}checked{{/if}}>
+                    <i class="fas fa-spell-check"></i> Lektorat
+                </label>
+                <label class="universal-ts-mode-label {{#if isModeGlossary}}selected{{/if}}">
+                    <input type="radio" name="mode" value="glossary" {{#if isModeGlossary}}checked{{/if}}>
+                    <i class="fas fa-book-atlas"></i> Glossar extrahieren
+                </label>
+            </div>
+
+            <div class="universal-ts-selectors-group">
+                <div class="universal-ts-lang-selector">
+                    <label for="universal-target-lang-select"><i class="fas fa-globe text-accent"></i> Zielsprache:</label>
+                    <select id="universal-target-lang-select" class="universal-select" data-action="changeTargetLanguage">
+                        {{#each languageOptions}}
+                        <option value="{{this.code}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="universal-ts-genre-selector">
+                    <label for="universal-genre-select"><i class="fas fa-hat-wizard text-accent"></i> Genre/Setting:</label>
+                    <select id="universal-genre-select" class="universal-select" data-action="changeSettingPreset">
+                        {{#each settingPresets}}
+                        <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        {{#if hasDoc}}
+            <div class="universal-ts-doc-header">
+                <div class="universal-ts-doc-title">
+                    {{#if isCompendium}}
+                        <i class="fas fa-boxes-stacked text-accent"></i> <strong>{{docName}}</strong>
+                        <span class="universal-badge universal-badge-info">Kompendium</span>
+                    {{else if isFolder}}
+                        <i class="fas fa-folder-open text-accent"></i> <strong>{{docName}}</strong>
+                        <span class="universal-badge universal-badge-info">Ordner</span>
+                    {{else}}
+                        <i class="fas fa-book-open text-accent"></i> <strong>{{docName}}</strong>
+                    {{/if}}
+                </div>
+                <div class="universal-ts-doc-actions">
+                    <button type="button" class="universal-btn-small" data-action="clearDocument" title="Anderes Dokument wählen">
+                        <i class="fas fa-arrow-right-from-bracket"></i> Wechseln
+                    </button>
+                    {{#if hasBackup}}
+                        <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreBackup" title="Originalzustand aus Backup wiederherstellen">
+                            <i class="fas fa-rotate-left"></i> Backup wiederherstellen
+                        </button>
+                    {{/if}}
+                    <button type="button" class="universal-btn-small" data-action="toggleSelect"><i class="fas fa-check-double"></i> Alle/Keine</button>
+                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectUnprocessed" title="Wählt nur Seiten aus, die noch nicht übersetzt wurden"><i class="fas fa-filter"></i> Nur nicht übersetzt</button>
+                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectNext"><i class="fas fa-forward"></i> Nächster Batch</button>
+                </div>
+            </div>
+
+            <!-- Capacity Meter Bar -->
+            <div class="universal-ts-capacity-card">
+                <div class="universal-ts-capacity-header">
+                    <span>
+                        <i class="fas fa-gauge-high text-accent"></i> 
+                        <strong>Ausgewählt:</strong> <span class="universal-ts-capacity-count">{{currentBatchChars}}</span> / {{maxCharLimit}} Zeichen
+                        <span class="universal-badge {{#if (gt totalBatchParts 1)}}universal-badge-warn{{else}}universal-badge-success{{/if}}">
+                            <i class="fas fa-puzzle-piece"></i> {{totalBatchParts}} {{#if (gt totalBatchParts 1)}}Batches{{else}}Batch{{/if}}
+                        </span>
+                    </span>
+                    <span class="universal-ts-capacity-percent">{{batchPercent}}% Kapazität</span>
+                </div>
+                <div class="universal-ts-capacity-track">
+                    <div class="universal-ts-capacity-fill {{batchStatusColor}}" style="width: {{batchPercent}}%;"></div>
+                </div>
+            </div>
+
+            <!-- Pages/Items Checklist -->
+            <div class="universal-ts-checklist">
+                {{#each pagesOrItems}}
+                <div class="universal-ts-item-row {{#if this.checked}}selected{{/if}} {{#if this.isProcessed}}processed{{/if}}">
+                    <label class="universal-ts-item-checkbox">
+                        <input type="checkbox" name="selectedPages" value="{{this.id}}" {{#if this.checked}}checked{{/if}} data-processed="{{this.isProcessed}}" data-action="toggleSelect" data-id="{{this.id}}">
+                        <span class="universal-ts-item-name">{{this.name}}</span>
+                    </label>
+
+                    <div class="universal-ts-item-meta">
+                        <span class="universal-ts-item-size {{#if this.isHuge}}text-warn{{/if}}" title="{{this.charCount}} Zeichen">
+                            <i class="fas fa-font"></i> {{this.formattedChars}}
+                        </span>
+                        {{#if this.isProcessed}}
+                            <span class="universal-badge universal-badge-success" title="Bereits übersetzt"><i class="fas fa-check"></i> Übersetzt</span>
+                        {{/if}}
+                        {{#if this.isGrammarChecked}}
+                            <span class="universal-badge universal-badge-info" title="Bereits lektoriert"><i class="fas fa-spell-check"></i> Lektoriert</span>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <!-- Custom Instructions -->
+            <div class="universal-ts-custom-instruct-card">
+                <label for="universal-custom-instruct"><i class="fas fa-pen-nib text-accent"></i> Optionale Zusatzanweisungen für diesen Durchgang:</label>
+                <input type="text" id="universal-custom-instruct" class="universal-input" value="{{customInstruct}}" placeholder="z.B. 'Informelles Du verwenden', 'Klassennamen prägnant übersetzen', 'Düsterer Ton'...">
+            </div>
+
+            <div class="universal-ts-footer-actions">
+                <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="generatePrompt">
+                    <i class="fas fa-wand-magic-sparkles"></i> Prompt generieren & Weiter
+                </button>
+            </div>
+        {{else}}
+            <!-- Drop Zone when no document is loaded -->
+            <div class="universal-drop-zone">
+                <i class="fas fa-cloud-arrow-up universal-drop-icon"></i>
+                <h3>Dokument oder Kompendium hier ablegen</h3>
+                <p>Ziehe ein Journal, einen Ordner, ein Item oder ein Kompendium-Pack aus der Seitenleiste direkt hierher.</p>
+
+                {{#if compendiumPacks.length}}
+                <div class="universal-drop-fallback">
+                    <label for="universal-pack-select">Oder Kompendium auswählen:</label>
+                    <select id="universal-pack-select" class="universal-select" data-action="selectCompendium">
+                        <option value="">-- Kompendium-Pack wählen --</option>
+                        {{#each compendiumPacks}}
+                        <option value="{{this.id}}">{{this.label}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{/if}}
+            </div>
+        {{/if}}
+    </div>
+    {{/if}}
+
+    <!-- Step 2: Prompt Generation & Copy -->
+    {{#if isStep2}}
+    <div class="universal-ts-card">
+        <div class="universal-ts-step-header">
+            <h3><i class="fas fa-terminal text-accent"></i> 2. Generierter Prompt für {{aiProviderName}}</h3>
+            
+            {{#if hasMultipleParts}}
+            <div class="universal-ts-batch-nav">
+                <button type="button" class="universal-btn-small" data-action="prevBatchPart" {{#if (eq currentBatchPart 1)}}disabled{{/if}}>
+                    <i class="fas fa-chevron-left"></i> Vorheriger Teil
+                </button>
+                <span class="universal-badge universal-badge-info">Teil {{currentBatchPart}} von {{totalBatchParts}}</span>
+                <button type="button" class="universal-btn-small" data-action="nextBatchPart" {{#if (eq currentBatchPart totalBatchParts)}}disabled{{/if}}>
+                    Nächster Teil <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            {{/if}}
+        </div>
+
+        <div class="universal-ts-prompt-box">
+            <textarea id="universal-prompt-text" class="universal-textarea" readonly rows="16">{{generatedPrompt}}</textarea>
+        </div>
+
+        <div class="universal-ts-footer-actions flexrow">
+            <button type="button" class="universal-btn" data-action="backToStep1">
+                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 1
+            </button>
+            <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="copyPromptAndOpenAi">
+                <i class="fas fa-copy"></i> Prompt kopieren & {{aiProviderName}} öffnen
+            </button>
+            <button type="button" class="universal-btn universal-btn-accent" data-action="goToStep3">
+                Weiter zu Schritt 3 <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Step 3: Paste AI Response -->
+    {{#if isStep3}}
+    <div class="universal-ts-card">
+        <div class="universal-ts-step-header">
+            <h3><i class="fas fa-paste text-accent"></i> 3. Antwort der KI einfügen</h3>
+            <span class="universal-badge universal-badge-info">Füge die vollständige Antwort aus {{aiProviderName}} ein</span>
+        </div>
+
+        {{#if parseError}}
+        <div class="universal-alert universal-alert-error">
+            <i class="fas fa-triangle-exclamation"></i> <strong>Fehler beim Parsen:</strong> {{parseError}}
+        </div>
+        {{/if}}
+
+        <div class="universal-ts-paste-box">
+            <textarea id="universal-paste-input" class="universal-textarea" rows="16" placeholder="Füge hier das von der KI ausgegebene JSON (```json ... ```) ein..."></textarea>
+        </div>
+
+        <div class="universal-ts-footer-actions flexrow">
+            <button type="button" class="universal-btn" data-action="backToStep2">
+                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 2
+            </button>
+            <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="analyzePaste">
+                <i class="fas fa-magnifying-glass"></i> Antwort analysieren & Prüfen
+            </button>
+        </div>
+    </div>
+    {{/if}}
+
+    <!-- Step 4: Preview & Apply -->
+    {{#if isStep4}}
+    <div class="universal-ts-card">
+        <div class="universal-ts-step-header">
+            <h3><i class="fas fa-table-columns text-accent"></i> 4. Vorschau & Diff-Vergleich</h3>
+            <span class="universal-badge universal-badge-success">{{previewData.diffs.length}} Einträge bereit</span>
+        </div>
+
+        <div class="universal-ts-diff-layout">
+            <!-- Sidebar with translated pages -->
+            <div class="universal-ts-diff-sidebar">
+                <h4>Einträge:</h4>
+                <div class="universal-ts-diff-nav">
+                    {{#each previewData.diffs}}
+                    <button type="button" class="universal-ts-diff-nav-btn {{#if (eq ../selectedDiffPageId this.id)}}active{{/if}}" data-action="selectDiffPage" data-page-id="{{this.id}}">
+                        <i class="fas fa-file-lines"></i> {{this.name}}
+                    </button>
+                    {{/each}}
+                </div>
+
+                {{#if previewData.newTerms.length}}
+                <div class="universal-ts-new-terms-card">
+                    <h4><i class="fas fa-book-bookmark text-accent"></i> Neue Glossar-Begriffe:</h4>
+                    <div class="universal-ts-terms-list">
+                        {{#each previewData.newTerms}}
+                        <div class="universal-ts-term-item">
+                            <strong>{{this.original}}</strong> ➔ {{this.translation}}
+                            <span class="universal-badge universal-badge-small">{{this.category}}</span>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+
+            <!-- Main Diff Viewer -->
+            <div class="universal-ts-diff-content">
+                {{#if activeDiffItem}}
+                <div class="universal-ts-diff-view">
+                    <div class="universal-ts-diff-col">
+                        <div class="universal-ts-diff-col-header">
+                            <i class="fas fa-file-lines"></i> Original: {{activeDiffItem.origName}}
+                        </div>
+                        <div class="universal-ts-diff-body">
+                            {{{activeDiffItem.origText}}}
+                        </div>
+                    </div>
+
+                    <div class="universal-ts-diff-col">
+                        <div class="universal-ts-diff-col-header text-accent">
+                            <i class="fas fa-check-double"></i> Übersetzung: {{activeDiffItem.name}}
+                        </div>
+                        <div class="universal-ts-diff-body">
+                            {{{activeDiffItem.transText}}}
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+
+        {{#if previewData.aiNotes.length}}
+        <div class="universal-ts-notes-card">
+            <h4><i class="fas fa-circle-info text-accent"></i> KI-Hinweise zu mehrdeutigen Passagen:</h4>
+            {{#each previewData.aiNotes}}
+            <div class="universal-ts-note-item">
+                <span class="universal-badge">{{this.context}}</span>
+                <em>"{{this.original}}"</em>: {{this.note}} (Empfehlung: {{this.suggestion}})
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+
+        <div class="universal-ts-footer-actions flexrow">
+            <button type="button" class="universal-btn" data-action="backToStep3">
+                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 3
+            </button>
+            <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="applyFinalUpdate">
+                <i class="fas fa-floppy-disk"></i> Änderungen anwenden & Speichern
+            </button>
+            {{#if hasMultipleParts}}
+            <button type="button" class="universal-btn universal-btn-accent" data-action="applyAndContinue">
+                Speichern & Nächsten Teil laden <i class="fas fa-forward"></i>
+            </button>
+            {{/if}}
+        </div>
+    </div>
+    {{/if}}
+</div>
