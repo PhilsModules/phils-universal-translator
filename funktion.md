@@ -1,5 +1,9 @@
 # 🧙‍♂️ Phil's Universal AI Translator – Das "Grimoire der Faulheit"
 
+<div align="right">
+  <a href="how-it-works.md">🇬🇧 Switch to English: Grimoire of Laziness</a>
+</div>
+
 Moin! Willkommen im Club der entspannten Spielleiter. Du hast dich also für **Phil's Universal AI Translator** entschieden. Exzellente Wahl.
 
 Vielleicht sitzt du gerade da, trinkst einen Kaffee und fragst dich: *"Wie zur Hölle funktioniert dieses Zauberwerk eigentlich ohne teure API-Keys, und warum explodiert meine Foundry-Welt dabei nicht?"*

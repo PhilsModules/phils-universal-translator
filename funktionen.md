@@ -1,5 +1,9 @@
 # 🧐 Systemarchitektur & Technische Exegese: Phil's Universal AI Translator
 
+<div align="right">
+  <a href="architecture.md">🇬🇧 Switch to English: System Architecture</a>
+</div>
+
 Eine detaillierte Dokumentation der Softwarearchitektur, Datenstrukturen und Verarbeitungs-Pipelines von **Phil's Universal AI Translator** für Foundry Virtual Tabletop (v14 ready).
 
 ---
@@ -11,10 +15,10 @@ Das Modul ist nach modernen modularen ES-Module-Standards und der Foundry `Appli
 ```
 phils-universal-translator/
 ├── module.json                      # Modul-Manifest (v14 ready)
-├── README.md                        # Hauptdokumentation (DE & EN)
-├── anleitung.md                     # Ausführliches Handbuch
-├── funktion.md                      # Grimoire der Faulheit
-├── funktionen.md                    # Technische Exegese (dieses Dokument)
+├── README.md                        # Hauptdokumentation (EN & DE)
+├── guide.md / anleitung.md          # Ausführliches Handbuch (EN / DE)
+├── how-it-works.md / funktion.md    # Grimoire der Faulheit (EN / DE)
+├── architecture.md / funktionen.md  # Technische Exegese (EN / DE)
 ├── Updates.md                       # Changelog & Versionshistorie
 ├── LICENSE                          # GPL-3.0 Lizenz
 ├── languages/                       # Lokalisierungsdateien & KI-Prompts
@@ -60,7 +64,7 @@ phils-universal-translator/
 
 2. **Glossar-Präparierung (`TermReplacer` & `UniversalGlossary`)**:
    - Lädt dynamisch alle definierten Übersetzungen aus dem in-world Journal `AI Glossar` und dem Core-Glossar.
-   - Setzt Glossarbegriffe im Format `DeutscheÜbersetzung %%Original%%` ein, ohne geschützte HTML-Tags oder Verlinkungs-Targets zu tangieren.
+   - Setzt Glossarbegriffe im Format `ZielÜbersetzung %%Original%%` ein, ohne geschützte HTML-Tags oder Verlinkungs-Targets zu tangieren.
 
 3. **Batch-Segmentierung (`createChunkedBatches`)**:
    - Berechnet die Byte- und Zeichenkapazität jedes Eintrags.

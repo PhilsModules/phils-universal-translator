@@ -1,6 +1,10 @@
 # 📖 Ausführliche Anleitung: Phil's Universal AI Translator (v1.0.0)
 
-Willkommen beim ultimativen, universellen Übersetzungs-Werkzeug für Foundry Virtual Tabletop (v14 ready). Dieses Modul ermöglicht es dir, Journale, Items, Akteure, ganze Ordner und Kompendium-Packs jedes beliebigen Rollenspiel-Systems mit modernster KI (Gemini, ChatGPT, Claude, Copilot, Perplexity) ohne API-Kosten konsistent und rollenspielgerecht ins Deutsche zu übersetzen.
+<div align="right">
+  <a href="guide.md">🇬🇧 Switch to English Guide</a>
+</div>
+
+Willkommen beim ultimativen, universellen Übersetzungs-Werkzeug für Foundry Virtual Tabletop (v14 ready). Dieses Modul ermöglicht es dir, Journale, Items, Akteure, ganze Ordner und Kompendium-Packs jedes beliebigen Rollenspiel-Systems mit modernster KI (Gemini, ChatGPT, Claude, Copilot, Perplexity) ohne API-Kosten konsistent und rollenspielgerecht in beliebige Zielsprachen (Deutsch, Englisch, Französisch, Spanisch, Italienisch, Polnisch, Japanisch etc.) zu übersetzen.
 
 ---
 
@@ -25,10 +29,7 @@ Das Modul führt dich in einem intuitiven Studio durch den Übersetzungsprozess:
 ### Schritt 1: Setup & Auswahl
 1. Öffne das Studio über den Button **`Universal Übersetzer`** in der Kopfleiste von Journalen, Items, Akteuren oder Kompendien (oder per Rechtsklick auf Ordner/Dokumente).
 2. Ziehe das gewünschte Dokument oder einen ganzen Ordner per Drag & Drop in das Fenster.
-3. Wähle deinen Modus:
-   - **Übersetzen**: Überträgt englische Texte in stimmungsvolles Rollenspiel-Deutsch.
-   - **Lektorat / Grammatik**: Prüft deutsche Texte auf Rechtschreibung, Stil und Begriffskonsistenz.
-   - **Glossar extrahieren**: Liest Eigennamen und Fachbegriffe aus dem Text aus.
+3. Wähle Zielsprache, Modus (*Übersetzen*, *Lektorat*, *Glossar*) und Setting-Profil.
 4. Markiere die gewünschten Seiten oder nutze *"Nur nicht übersetzt"* / *"Nächster Batch"*.
 5. Die **Live-Kapazitätsanzeige** visualisiert die Zeichenmenge und teilt den Text bei Bedarf automatisch in handliche Batches auf.
 6. Klicke auf **"Prompt generieren & Weiter"**.
@@ -54,7 +55,7 @@ Das Modul führt dich in einem intuitiven Studio durch den Übersetzungsprozess:
 ## 3. Werkzeuge in der Kopfleiste
 
 - 🛡️ **Auditor**: Führt einen weltweiten Integritätscheck für alle Kampagnendokumente durch (prüft auf fehlende Chunks, fehlerhafte Verlinkungen und Umlaute-Glitches mit 1-Klick-Reparatur).
-- ⚡ **Smart-Sync**: Gleicht nach einem offiziellen Modul- oder System-Update deine Dokumente mit dem Translation Memory ab und stellt deutsche Übersetzungen blitzschnell kostenlos wieder her.
+- ⚡ **Smart-Sync**: Gleicht nach einem offiziellen Modul- oder System-Update deine Dokumente mit dem Translation Memory ab und stellt Übersetzungen blitzschnell kostenlos wieder her.
 - 🔗 **Links Sync**: Biegt Kompendium-Verlinkungen (@UUID/@Embed) auf bereits existierende Welt-Dokumente um.
 - 💾 **Backup & Import**: Exportiert und importiert das gesamte Übersetzungswissen als portable `.json`-Datei.
 - 🔍 **Volltextsuche**: Durchsucht Journale weltweit nach Textmustern mit RegEx- und Batch-Ersetzungsfunktionen.

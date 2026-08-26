@@ -16,7 +16,7 @@
 <br>
 *Der universelle, smarte Übersetzungs-Helfer für Foundry VTT (v14 ready) – für jedes Spielsystem, echtes Multilingual, keine API-Kosten, volle Kontrolle.*
 
-📖 **[Detailed Manual / Ausführliche Anleitung](anleitung.md)**
+📖 **[English User Guide](guide.md)** | **[Deutsche Anleitung](anleitung.md)**
 <br><br>
 
 <a href="#-english-instructions"><img src="https://img.shields.io/badge/%20-English_Instructions-black?style=for-the-badge&logo=united-kingdom&logoColor=white" alt="English Instructions"></a> <a href="#-deutsche-anleitung"><img src="https://img.shields.io/badge/%20-Deutsche_Anleitung-black?style=for-the-badge&logo=germany&logoColor=red" alt="Deutsche Anleitung"></a>
@@ -36,9 +36,9 @@
 
 Phil's Universal AI Translator connects your Foundry VTT world with the power of modern AI (Google Gemini, ChatGPT, Claude, Copilot, Perplexity). The standout feature: **You don't need expensive API keys!** The module acts as an intelligent "Prompt Engineer" tailored for the free web interfaces of AI providers.
 
-> 🧙‍♂️ **Deep Dive:** Want to discover how the automated safety shield, LinkProtection, and prompt pipelines work? Read the [Grimoire of Laziness (funktion.md)](funktion.md).
+> 🧙‍♂️ **Deep Dive:** Want to discover how the automated safety shield, LinkProtection, and prompt pipelines work? Read the [Grimoire of Laziness (how-it-works.md)](how-it-works.md).
 >
-> 🧐 **For the refined scholar:** Prefer eloquent academic phrasing? Read the [System Architecture Exegesis (funktionen.md)](funktionen.md).
+> 🧐 **For the refined scholar:** Prefer eloquent academic phrasing? Read the [System Architecture Exegesis (architecture.md)](architecture.md).
 
 ## 🚀 Key Highlights & Features (v1.0.0)
 
