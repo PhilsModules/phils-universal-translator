@@ -1,7 +1,7 @@
-# 🧐 System Architecture & Technical Exegesis: Phil's Universal AI Translator
+# System Architecture: Phil's Universal AI Translator
 
 <div align="right">
-  <a href="funktionen.md">🇩🇪 Zur deutschen Systemarchitektur-Exegese wechseln</a>
+  <a href="funktionen.md">Zur deutschen Systemarchitektur wechseln</a>
 </div>
 
 A detailed technical specification of the software architecture, data structures, and processing pipelines of **Phil's Universal AI Translator** for Foundry Virtual Tabletop (v14 ready).
@@ -17,8 +17,8 @@ phils-universal-translator/
 ├── module.json                      # Module Manifest (v14 ready)
 ├── README.md                        # Primary Documentation (EN & DE)
 ├── guide.md / anleitung.md          # Comprehensive User Manual (EN / DE)
-├── how-it-works.md / funktion.md    # Grimoire of Laziness (EN / DE)
-├── architecture.md / funktionen.md  # Technical Exegesis (EN / DE)
+├── how-it-works.md / funktion.md    # Functional Overview (EN / DE)
+├── architecture.md / funktionen.md  # Technical Architecture (EN / DE)
 ├── Updates.md                       # Changelog & Version History
 ├── LICENSE                          # GPL-3.0 License
 ├── languages/                       # Localization & Dynamic AI Prompts
@@ -72,7 +72,7 @@ phils-universal-translator/
 
 4. **Resilient Response Parsing (`smartParseAiResponse`)**:
    - Strips conversational preamble, markdown code blocks (` ```json ... ``` `), and trailing commas.
-   - Automatically corrects invalid brackets and repairs UTF-8 Mojibake encoding artifacts (e.g., `Ã¤` ➔ `ä`).
+   - Automatically corrects invalid brackets and repairs UTF-8 Mojibake encoding artifacts (e.g., `Ã¤` to `ä`).
 
 5. **Link Integrity & LinkProtection**:
    - Cross-verifies extracted `@UUID[...]`, `@Embed[...]`, `@Check[...]`, `@Damage[...]`, `@Item[...]`, and inline rolls against original references.

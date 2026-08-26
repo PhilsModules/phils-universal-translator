@@ -1,54 +1,50 @@
-# 🧙‍♂️ Phil's Universal AI Translator – Das "Grimoire der Faulheit"
+# Funktionsweise: Phil's Universal AI Translator
 
 <div align="right">
-  <a href="how-it-works.md">🇬🇧 Switch to English: Grimoire of Laziness</a>
+  <a href="how-it-works.md">Switch to English Overview</a>
 </div>
 
-Moin! Willkommen im Club der entspannten Spielleiter. Du hast dich also für **Phil's Universal AI Translator** entschieden. Exzellente Wahl.
-
-Vielleicht sitzt du gerade da, trinkst einen Kaffee und fragst dich: *"Wie zur Hölle funktioniert dieses Zauberwerk eigentlich ohne teure API-Keys, und warum explodiert meine Foundry-Welt dabei nicht?"*
-
-Hier ist der Deep Dive unter die Haube – erklärt für Leute, die gerne epische Kampagnen leiten, aber bei JSON-Dateien und API-Rechnungen Schweißausbrüche bekommen.
+Diese Übersicht erklärt das Funktionsprinzip von Phil's Universal AI Translator: wie das Modul ohne laufende API-Kosten arbeitet und wie es deine Kampagnendaten während des Übersetzungsprozesses absichert.
 
 ---
 
-## 🏗️ Das Prinzip: Die biologische Daten-Pipeline
+## Das Grundprinzip: Die strukturierte Pipeline
 
-Moderne KI-Modelle wie Google Gemini, ChatGPT oder Claude sind genial im Übersetzen von Fantasy- und Sci-Fi-Texten. Aber: Direkte API-Schnittstellen kosten Geld, erfordern Kreditkarten und sperren Konten, wenn man mal ein dickes Regelbuch durchjagt.
+Direkte API-Schnittstellen für KI-Modelle verursachen oft laufende Kosten, Kontolimits und Sperren, wenn man umfangreiche Regel- oder Abenteuerbände verarbeitet.
 
-Die Lösung: **Du bist die Schnittstelle!**
+Phil's Universal AI Translator umgeht diese Hürden durch eine intelligente lokale Vorbereitung:
 
-1. **Das Modul bereitet alles mundgerecht vor:** Es scannt dein Dokument, maskiert geschützte Foundry-Links (`@UUID`, `@Embed`, Würfelformeln), setzt Glossarbegriffe ein und schnürt ein perfekt optimiertes Prompt-Paket.
-2. **Kopieren & KI öffnen:** 1 Klick auf *"Kopieren & KI öffnen"* befördert den Prompt in deine Zwischenablage und öffnet deinen Browser.
-3. **Einfügen (`STRG + V`):** Die KI erledigt die Denkarbeit.
-4. **Antwort zurückholen:** Du kopierst die Antwort, fügst sie im Studio ein – und das Modul parst das JSON, heilt Umlaute und aktualisiert deine Welt in Millisekunden!
-
----
-
-## 🛡️ Das "Keuschheitsgürtel-Protokoll" (Link- & Syntax-Schutz)
-
-KIs lieben es, "kreativ" zu sein. Bei Foundry-Links wie `@UUID[JournalEntry.abc123xyz]{Die Gruft}` ist Kreativität jedoch tödlich. Wenn die KI versucht, die interne ID `abc123xyz` ins Deutsche zu übersetzen, zerschießt es die Verlinkung.
-
-### Wie das Modul deine Verlinkungen schützt:
-- **LinkProtection-Engine:** Vor dem Senden an die KI werden Verlinkungen erkannt.
-- **Intelligente Rekonstruktion:** Falls die KI trotz aller Anweisungen eine ID beschädigt hat, erkennt der LinkProtection-Parser das Ziel und repariert die Verlinkung automatisch auf das korrekte Ziel-Dokument.
-- **Anzeigenamen-Übersetzung:** Der optionale Text in den geschweiften Klammern `{...}` darf übersetzt werden, während das Link-Ziel unantastbar bleibt.
+1. **Strukturierte Aufbereitung:** Das Modul scannt dein Dokument, maskiert geschützte Foundry-Verlinkungen (`@UUID`, `@Embed`, Würfelformeln), setzt bisherige Glossarbegriffe ein und formuliert einen optimierten Prompt.
+2. **Kopieren & KI öffnen:** Ein Klick befördert den Prompt in die Zwischenablage und öffnet die kostenlose Weboberfläche deines bevorzugten Anbieters (z. B. Gemini oder ChatGPT) im Browser.
+3. **Verarbeitung:** Die KI führt die Übersetzung im vollständigen Kontextfenster durch.
+4. **Prüfung und Übernahme:** Du fügst die Antwort im Studio ein. Das Modul validiert das JSON, repariert Zeichensätze und aktualisiert die Dokumente in Foundry.
 
 ---
 
-## 📚 Das In-World Glossar: Buchhaltung auf Autopilot
+## Link- und Syntax-Schutz
 
-Niemand pflegt gerne manuell Vokabellisten. Deshalb zwingt das Modul die KI, diese Arbeit automatisch bei jeder Übersetzung mitzuerledigen:
+Sprachmodelle neigen gelegentlich dazu, technische Parameter abzuändern. Wenn eine KI in einem Link wie `@UUID[JournalEntry.abc123xyz]{Die Gruft}` die interne ID `abc123xyz` übersetzt, wird die Verlinkung zerstört.
 
-1. **Erkennung:** Bei jeder Übersetzung scannt die KI nach neuen Eigennamen, Orten, Charakteren oder Fachbegriffen.
-2. **Kategorisierung:** Die Begriffe werden direkt 12 Themenkategorien zugeordnet (Orte, Götter, Organisationen, Biome, Spezies, Zauber etc.).
-3. **1-Klick Import:** Im Schritt 4 des Studios landen alle neuen Begriffe mit einem Klick in deinem Journal **`AI Glossar`** in Foundry.
-4. **Konsistenz:** Beim nächsten Kapitel kennt das Modul alle bisherigen Begriffe und garantiert absolute Namenskonsistenz über die gesamte Kampagne!
+### Schutzmaßnahmen des Moduls:
+- **Erkennung vor dem Senden:** Alle Verlinkungen werden vor der Prompt-Erstellung erfasst und geschützt.
+- **Automatische Reparatur:** Der LinkProtection-Parser gleicht die zurückgegebenen IDs mit den Originaldaten ab und korrigiert beschädigte Pfade automatisch.
+- **Anzeigenamen-Übersetzung:** Der sichtbare Text in geschweiften Klammern `{...}` wird passend in die Zielsprache übersetzt, während das technische Linkziel unberührt bleibt.
 
 ---
 
-## 🔒 Der Fallschirm: 100% Verlässliche Backups
+## Automatisches In-World Glossar
 
-Weil Sicherheit an erster Stelle steht:
-- Bevor auch nur ein Buchstabe in deiner Welt geändert wird, dupliziert das Modul das Original automatisch als `Dokumentname (Backup)`.
-- Sollte jemals etwas schiefgehen, klickst du einfach auf **"Backup wiederherstellen"** – und dein Originalstand ist unversehrt wieder da.
+Konsistente Begriffe über mehrjährige Kampagnen hinweg erfordern saubere Begriffslisten:
+
+1. **Automatische Erkennung:** Die KI erkennt neue Eigennamen, Orte, Charaktere und Fachbegriffe bei jedem Durchgang.
+2. **Kategorisierung:** Neue Begriffe werden direkt 12 thematischen Kategorien zugeordnet (Orte, Götter, Organisationen, Biome, Spezies, Klassen, Zauber, Regeln etc.).
+3. **1-Klick-Übernahme:** Im Studio werden bestätigte Begriffe direkt in das Journal **AI Glossar** in Foundry eingetragen.
+4. **Konsistenz:** Bei künftigen Kapiteln greift das Modul auf diese Begriffe zurück und garantiert eine einheitliche Nomenklatur.
+
+---
+
+## Automatische Sicherheits-Backups
+
+Datensicherheit steht an erster Stelle:
+- Vor jedem Schreibvorgang dupliziert das Modul das Originaldokument automatisch als `Dokumentname (Backup)`.
+- Sollte eine Übersetzung nicht den Erwartungen entsprechen, setzt ein Klick auf **Backup wiederherstellen** das Dokument sofort auf den Ausgangszustand zurück.

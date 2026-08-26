@@ -1,7 +1,7 @@
-# 🧐 Systemarchitektur & Technische Exegese: Phil's Universal AI Translator
+# Systemarchitektur: Phil's Universal AI Translator
 
 <div align="right">
-  <a href="architecture.md">🇬🇧 Switch to English: System Architecture</a>
+  <a href="architecture.md">Switch to English Architecture</a>
 </div>
 
 Eine detaillierte Dokumentation der Softwarearchitektur, Datenstrukturen und Verarbeitungs-Pipelines von **Phil's Universal AI Translator** für Foundry Virtual Tabletop (v14 ready).
@@ -17,8 +17,8 @@ phils-universal-translator/
 ├── module.json                      # Modul-Manifest (v14 ready)
 ├── README.md                        # Hauptdokumentation (EN & DE)
 ├── guide.md / anleitung.md          # Ausführliches Handbuch (EN / DE)
-├── how-it-works.md / funktion.md    # Grimoire der Faulheit (EN / DE)
-├── architecture.md / funktionen.md  # Technische Exegese (EN / DE)
+├── how-it-works.md / funktion.md    # Funktionsübersicht (EN / DE)
+├── architecture.md / funktionen.md  # Technische Architektur (EN / DE)
 ├── Updates.md                       # Changelog & Versionshistorie
 ├── LICENSE                          # GPL-3.0 Lizenz
 ├── languages/                       # Lokalisierungsdateien & KI-Prompts

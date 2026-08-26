@@ -12,123 +12,123 @@
 
 <br>
 
-**The universal smart translation helper for Foundry VTT (v14 ready) – for any tabletop RPG system, true multilingual, no API costs, full control.**
+**A universal, multilingual AI-assisted translation tool for Foundry VTT (v14 ready) across any tabletop RPG system, with zero API costs and full local control.**
 <br>
-*Der universelle, smarte Übersetzungs-Helfer für Foundry VTT (v14 ready) – für jedes Spielsystem, echtes Multilingual, keine API-Kosten, volle Kontrolle.*
+*Ein universelles, mehrsprachiges KI-Übersetzungswerkzeug für Foundry VTT (v14 ready) für alle Rollenspielsysteme, ohne API-Kosten und mit voller lokaler Kontrolle.*
 
-📖 **[English User Guide](guide.md)** | **[Deutsche Anleitung](anleitung.md)**
-<br><br>
+<br>
 
-<a href="#-english-instructions"><img src="https://img.shields.io/badge/%20-English_Instructions-black?style=for-the-badge&logo=united-kingdom&logoColor=white" alt="English Instructions"></a> <a href="#-deutsche-anleitung"><img src="https://img.shields.io/badge/%20-Deutsche_Anleitung-black?style=for-the-badge&logo=germany&logoColor=red" alt="Deutsche Anleitung"></a>
+[English User Guide](guide.md) | [Deutsche Anleitung](anleitung.md)
+
+<br>
+
+<a href="#english-documentation">English Documentation</a> | <a href="#deutsche-dokumentation">Deutsche Dokumentation</a>
 </div>
 
 > [!CAUTION]
-> ### ⚖️ Private Use Only / Nur für den privaten Gebrauch
-> **English:** Translations of copyrighted works created with this module may **only be used for private purposes**. Publication, distribution, or commercial use (sale) is prohibited.
+> ### Private Use Only / Nur für den privaten Gebrauch
+> **English:** Translations of copyrighted material created with this tool are intended strictly for personal, private gaming use. Public redistribution or commercial sale is not permitted.
 >
-> **Deutsch:** Die mit diesem Modul erstellten Übersetzungen urheberrechtlich geschützter Werke dürfen **nur für den privaten Gebrauch** verwendet werden. Eine Veröffentlichung, Verbreitung oder kommerzielle Nutzung (Verkauf) ist nicht gestattet.
+> **Deutsch:** Die mit diesem Modul erstellten Übersetzungen urheberrechtlich geschützter Werke dürfen ausschließlich für den privaten Spieltisch verwendet werden. Eine Veröffentlichung, Weitergabe oder kommerzielle Nutzung ist nicht gestattet.
 
 ---
 
-# <img src="https://flagcdn.com/48x36/gb.png" width="28" height="21" alt="EN"> English Instructions
+# English Documentation
 
-**Translate adventures, journals, items, actors, folders, and compendiums for ANY tabletop RPG system using modern AI – free of charge without API costs.**
+Phil's Universal AI Translator brings high-quality, context-aware translations to your Foundry VTT world without subscription fees or API billing. By acting as a structured bridge between your game data and modern large language models (such as Google Gemini, ChatGPT, Claude, Microsoft Copilot, and Perplexity), the module prepares, protects, and restores your adventure content seamlessly.
 
-Phil's Universal AI Translator connects your Foundry VTT world with the power of modern AI (Google Gemini, ChatGPT, Claude, Copilot, Perplexity). The standout feature: **You don't need expensive API keys!** The module acts as an intelligent "Prompt Engineer" tailored for the free web interfaces of AI providers.
+Detailed references:
+* [User Guide (guide.md)](guide.md) - Step-by-step tutorial for all features.
+* [Functional Overview (how-it-works.md)](how-it-works.md) - Conceptual explanation of the translation workflow and data protections.
+* [System Architecture (architecture.md)](architecture.md) - Detailed technical documentation of the software architecture.
 
-> 🧙‍♂️ **Deep Dive:** Want to discover how the automated safety shield, LinkProtection, and prompt pipelines work? Read the [Grimoire of Laziness (how-it-works.md)](how-it-works.md).
->
-> 🧐 **For the refined scholar:** Prefer eloquent academic phrasing? Read the [System Architecture Exegesis (architecture.md)](architecture.md).
+## Core Features
 
-## 🚀 Key Highlights & Features (v1.0.0)
+* **True Multilingual Support:** Translate between any language pair supported by your chosen AI model (English to German, French, Spanish, Italian, Portuguese, Polish, Ukrainian, Japanese, Chinese, or vice versa).
+* **System-Agnostic Engine:** Works natively with any system in Foundry VTT (Pathfinder 2e, D&D 5e, Shadowrun, Call of Cthulhu, Crucible, Cyberpunk, Alien, Tormenta20, Savage Worlds, or custom systems).
+* **Foundry v14 Ready:** Built on modern ApplicationV2 foundations with compatibility spanning Foundry v12, v13, and v14.
+* **Narrative Read-Aloud Tool:** Trigger on-the-fly translations directly from sheet headers or via a floating selection tool for instant table narration.
+* **Non-Destructive Runtime Overlay:** Switch between translated text and original source content directly in document sheets without altering underlying database files.
+* **12-Category Lore Glossary:** Automatically builds and updates an in-world journal (*AI Glossar*) categorized into locations, characters, deities, factions, biomes, species, cultures, classes, items, rules, languages, and general terms.
+* **LinkProtection Protocol:** Guarantees that internal entity links (`@UUID`, `@Embed`, `@Check`, `@Damage`), roll syntax (`[[/r ...]]`), and HTML tags are preserved without corruption.
+* **Campaign Integrity Auditor:** Scans world documents for broken links, missing text chunks, and character encoding issues, offering one-click batch repairs.
+* **Smart-Sync and Translation Memory:** Re-applies past translations automatically when adventure modules or system packages receive official updates.
+* **Live Capacity Meter:** Tracks character counts in real time and automatically splits large adventure texts into optimal batch sizes to prevent truncation.
+* **Safety Backups:** Automatically generates an immutable duplicate of every document before changes are written to the database.
 
-* 🌍 **True Multilingual (Any Language ➔ Any Language):** Translate not just from English to German, but between any language pair supported by your AI (e.g. English ➔ German, French, Spanish, Italian, Portuguese, Polish, Ukrainian, Japanese, Chinese, or German ➔ English, etc.).
-* 🌐 **100% Universal & System-Agnostic:** Works with every game system on Foundry (Pathfinder 2e, D&D 5e, Shadowrun, Call of Cthulhu, Crucible, Cyberpunk, Alien, Tormenta20, Savage Worlds, and custom systems).
-* 🛡️ **Foundry v14 Ready:** Fully built for Foundry VTT v12, v13, and v14 with ApplicationV2 sheets and modern lifecycle event handling.
-* 📢 **Narrative Read-Aloud (📢):** Red bullhorn icon in window headers and floating text-selection widget for instant on-the-fly GM narrative translations during sessions.
-* 🔄 **Non-Destructive Runtime Overlay:** Seamlessly toggle between translations and original text in sheet headers without overwriting original data.
-* 📚 **12-Category In-World Lore Glossary:** Automatically builds and manages an in-world journal (*AI Glossar*) categorized into 12 thematic sections (Locations, NPCs, Deities, Organizations, Biomes, Species, Cultures, Classes, Spells/Items, Rules, Languages, General).
-* 🛡️ **LinkProtection Protocol:** Protects `@UUID[...]`, `@Embed[...]`, `@Check[...]`, `@Damage[...]`, `@Item[...]`, `@Actor[...]`, inline rolls `[[...]]`, and HTML structures from AI corruption.
-* 🔍 **Campaign Integrity Auditor:** Scans your entire campaign for missing text chunks, broken backup links, and encoding glitches with 1-click automated repairs.
-* ⚡ **Smart-Sync & Memory:** Automatically restores translations across documents after official system/module updates in 1 click.
-* 📊 **Live Capacity Meter:** Real-time character counter and progress bar with automatic chunking for massive adventure texts.
-* 💾 **100% Safety Backups:** Automatically creates an indestructible duplicate before applying changes.
-
-## 📦 Installation
+## Installation
 
 1. Open Foundry VTT.
 2. Navigate to the **Add-on Modules** tab.
 3. Click **Install Module**.
-4. Paste the following **Manifest URL** into the bottom input field:
+4. Paste the following **Manifest URL** into the bottom field:
    ```text
    https://github.com/PhilsModules/phils-universal-translator/releases/latest/download/module.json
    ```
 5. Click **Install**.
 
-## 📖 Quickstart (4-Step Workflow)
+## Quickstart Workflow
 
-1. **Open the Studio:** Click the **`Universal Übersetzer`** button in the header of Journals, Items, Actors, or Compendiums (or right-click any folder/document).
-2. **Step 1 (Document & Target Language):** Drag & drop your document/folder into the window. Select your target language (German, French, Spanish, English, etc.), mode (*Translate*, *Proofread*, *Glossary*), and genre profile.
-3. **Step 2 (Prompt & AI):** Click **"Copy Prompt & Open AI"**. The optimized prompt is copied to your clipboard and your chosen AI web interface opens in your browser.
-4. **Step 3 (Paste Response):** Paste the AI's response with `CTRL + V` and click **"Analyze Response"**.
-5. **Step 4 (Preview & Save):** Review the side-by-side rich diff view, accept new glossary terms, and click **"Apply & Save"** – all done!
+1. **Open the Studio:** Click **Universal Translator** in the header of any directory (Journals, Items, Actors, Compendiums) or right-click an entry.
+2. **Select Target & Content:** Drag and drop your document or folder into the window. Choose your target language, translation mode, and setting profile.
+3. **Generate & Copy Prompt:** Click **Copy Prompt & Open AI** to place the structured prompt on your clipboard and launch your preferred AI web interface.
+4. **Paste Response:** Paste the generated JSON output back into Step 3 and click **Analyze Response**.
+5. **Review & Save:** Inspect the side-by-side diff preview, review newly discovered glossary terms, and click **Apply Changes & Save**.
 
 ---
 
-# <img src="https://flagcdn.com/48x36/de.png" width="28" height="21" alt="DE"> Deutsche Anleitung
+# Deutsche Dokumentation
 
-**Übersetze Abenteuer, Journale, Items, Akteure, Ordner und Kompendien für jedes beliebige Rollenspiel-System kostenlos mit modernster KI.**
+Phil's Universal AI Translator ermöglicht hochwertige, kontextsensitive Übersetzungen für Foundry VTT ohne laufende API-Kosten oder Abonnements. Das Modul bereitet Abenteuerinhalte strukturiert für Web-KIs (Google Gemini, ChatGPT, Claude, Copilot, Perplexity) vor, schützt alle internen Verlinkungen und fügt übersetzte Inhalte präzise wieder in deine Welt ein.
 
-Phil's Universal AI Translator verbindet deine Foundry VTT Welt mit der Power moderner KI (Google Gemini, ChatGPT, Claude, Copilot, Perplexity). Das Besondere: **Du brauchst keine teuren API-Keys!** Das Modul arbeitet als intelligenter "Prompt-Engineer" für die kostenlosen Web-Versionen der KI-Anbieter.
+Weiterführende Handbücher:
+* [Ausführliche Anleitung (anleitung.md)](anleitung.md) - Schritt-für-Schritt-Handbuch für alle Werkzeuge.
+* [Funktionsweise (funktion.md)](funktion.md) - Verständliche Erklärung der Daten-Pipeline und Schutzmechanismen.
+* [Technische Exegese (funktionen.md)](funktionen.md) - Detaillierte Dokumentation der Softwarearchitektur.
 
-> 🧙‍♂️ **Deep Dive:** Willst du wissen, wie der automatische Schutzschild und die Prompt-Architektur funktionieren? Lies das [Grimoire der Faulheit (funktion.md)](funktion.md).
->
-> 🧐 **Für das gehobene Auditorium:** Bevorzugst du eine eloquente Ausdrucksweise? [Exegese der Systemarchitektur (funktionen.md)](funktionen.md).
+## Wichtigste Funktionen
 
-## 🚀 Highlights & Features (v1.0.0)
+* **Echte Mehrsprachigkeit:** Übersetze flexibel zwischen beliebigen Sprachpaaren (z. B. Englisch nach Deutsch, Französisch, Spanisch, Italienisch, Polnisch, Japanisch oder umgekehrt).
+* **Systemunabhängige Architektur:** Kompatibel mit allen Foundry-Systemen (Pathfinder 2e, D&D 5e, Shadowrun, Cthulhu, Crucible, Cyberpunk, Alien, Tormenta20 etc.).
+* **Foundry v14 Kompatibilität:** Entwickelt auf Basis moderner ApplicationV2-Standards für Foundry v12, v13 und v14.
+* **Vorlesetext-Schnellübersetzer:** Schnelle Übersetzung fokussierter Passagen direkt aus der Fensterleiste oder per Textmarkierung am Spieltisch.
+* **Nicht-destruktives Runtime-Overlay:** Ermöglicht das Umschalten zwischen Originaltext und Übersetzung im Sheet, ohne Quelldaten zu überschreiben.
+* **Strukturiertes 12-Kategorien-Glossar:** Verwaltet ein In-World-Journal (*AI Glossar*) mit automatischer Einordnung in Orte, NSCs, Götter, Fraktionen, Zauber, Regeln und weitere Bereiche.
+* **LinkProtection-Sicherheitsnetz:** Schützt `@UUID`-Verlinkungen, Würfelformeln und HTML-Strukturen vor fehlerhafter KI-Veränderung.
+* **Kampagnen-Auditor:** Erkennt fehlende Textabschnitte, fehlerhafte Links und Zeichensatz-Probleme mit 1-Klick-Reparaturfunktion.
+* **Smart-Sync und Translation Memory:** Stellt bestehende Übersetzungen nach offiziellen System- oder Modul-Updates automatisch wieder her.
+* **Echtzeit-Kapazitätskontrolle:** Zeigt die Zeichenmenge live an und unterteilt umfangreiche Texte automatisch in passende Teil-Batches.
+* **Automatische Sicherheits-Backups:** Erstellt vor jedem Speichervorgang automatisch einen unveränderten Snapshot des Ausgangsdokuments.
 
-* 🌍 **Echtes Multilingual (Jede Sprache ➔ Jede Sprache):** Übersetze nicht nur von Englisch nach Deutsch, sondern zwischen beliebigen Sprachen (z.B. Englisch ➔ Deutsch, Französisch, Spanisch, Polnisch, Italienisch, Ukrainisch, Japanisch, Chinesisch oder Deutsch ➔ Englisch uvm.).
-* 🌐 **100% Universell & System-Agnostisch:** Funktioniert mit jedem Foundry-System (Pathfinder 2e, D&D 5e, Shadowrun, Call of Cthulhu, Crucible, Cyberpunk, Alien, Tormenta20, Savage Worlds uvm.).
-* 🛡️ **Foundry v14 Ready:** Volle Kompatibilität mit Foundry VTT v12, v13 und v14 inklusive ApplicationV2-Sheets und moderner Event-Steuerung.
-* 📢 **Vorlesetext-Schnellübersetzung:** Rotes Vorlese-Symbol (📢) in Fensterleisten und schwebendes Textmarkierungs-Widget für blitzschnelle Sofort-Übersetzung am Spieltisch.
-* 🔄 **Non-Destruktives Runtime-Overlay:** Schalte in Sheets per Knopfdruck nahtlos zwischen Sprachen um, ohne die Originale zu überschreiben.
-* 📚 **12-Kategorien Lore-Glossar:** Verwaltet ein in-world Journal (*AI Glossar*) mit 12 thematischen Kategorien (Orte, Charaktere, Götter, Organisationen, Biome, Spezies, Kulturen, Klassen, Zauber, Kosmologie, Sprachen, Spielregeln).
-* 🛡️ **Automatischer LinkProtection-Schutz:** Schützt `@UUID[...]`, `@Embed[...]`, `@Check[...]`, `@Damage[...]`, Würfelwürfe und HTML-Strukturen vor Beschädigung.
-* 🔍 **Kampagnen-Auditor:** Scannt deine gesamte Kampagne auf Vollständigkeit, tote Verlinkungen, fehlende Text-Chunks und Umlaute-Glitches mit 1-Klick-Reparatur.
-* ⚡ **Smart-Sync nach System-Updates:** Stellt nach offiziellen Abenteuer- oder System-Updates alle Übersetzungen mit 1 Klick kostenlos aus dem Translation Memory wieder her.
-* 📊 **Live-Kapazitätsanzeige:** Zeigt Zeichenmenge und Batches in Echtzeit an und teilt riesige Texte automatisch in passende Teil-Batches auf.
-* 💾 **100% Verlässliche Sicherheits-Backups:** Erstellt vor jeder Änderung automatisch ein unzerstörbares World-Backup.
-
-## 📦 Installation
+## Installation
 
 1. Öffne Foundry VTT.
-2. Gehe zum Reiter **Add-on Modules**.
-3. Klicke auf **Install Module**.
-4. Füge die folgende **Manifest URL** unten ein:
+2. Wechsle zum Reiter **Zusatzmodule** (Add-on Modules).
+3. Klicke auf **Modul installieren** (Install Module).
+4. Füge folgende **Manifest URL** unten ein:
    ```text
    https://github.com/PhilsModules/phils-universal-translator/releases/latest/download/module.json
    ```
-5. Klicke auf **Install**.
+5. Klicke auf **Installieren**.
 
-## 📖 Schnellstart (4-Schritte Workflow)
+## 4-Schritte Schnellstart
 
-1. **Übersetzer öffnen:** Klicke oben im Reiter **Journalnotizen**, **Items**, **Akteure** oder **Kompendien** auf den Button **`Universal Übersetzer`** (oder nutze den Rechtsklick auf jeden Eintrag oder Ordner).
-2. **Schritt 1 (Auswahl & Zielsprache):** Ziehe dein Dokument per Drag & Drop in das Fenster. Wähle Zielsprache (z.B. Deutsch, Französisch, Spanisch etc.), Modus (*Übersetzen*, *Lektorat*, *Glossar*) und Genre-Profil.
-3. **Schritt 2 (Prompt & KI):** Klicke auf **"Prompt kopieren & KI öffnen"**. Der optimierte Prompt landet in deiner Zwischenablage und dein KI-Anbieter (z.B. Gemini) öffnet sich im Browser.
-4. **Schritt 3 (Antwort einfügen):** Füge die Antwort der KI mit `STRG + V` ein und klicke auf **"Antwort analysieren"**.
-5. **Schritt 4 (Vorschau & Speichern):** Prüfe die Side-by-Side Gegenüberstellung und klicke auf **"Änderungen anwenden & Speichern"** – fertig!
+1. **Studio öffnen:** Klicke in der Kopfleiste von Journalen, Items, Akteuren oder Kompendien auf **Universal Übersetzer** (oder nutze den Rechtsklick).
+2. **Dokument & Zielsprache wählen:** Ziehe das Dokument oder den Ordner per Drag & Drop in das Fenster. Wähle Zielsprache, Modus und Genre-Profil.
+3. **Prompt kopieren & KI öffnen:** Klicke auf **Prompt kopieren & KI öffnen**. Der Prompt landet in der Zwischenablage und die KI öffnet sich im Browser.
+4. **Antwort einfügen:** Füge die JSON-Antwort der KI in Schritt 3 ein und klicke auf **Antwort analysieren**.
+5. **Prüfen & Speichern:** Kontrolliere die Gegenüberstellung im Diff-Viewer und klicke auf **Änderungen anwenden & Speichern**.
 
 ---
 
-# ⚖️ License
-**Phil's Universal AI Translator** is open-source software licensed under the [GPL-3.0 License](LICENSE).
+# License & Support
+
+Phil's Universal AI Translator is open-source software licensed under the [GNU General Public License v3.0](LICENSE).
 
 <div align="center">
-    <h2>❤️ Support the Development</h2>
-    <p>If you enjoy this module and want to support open-source development for Foundry VTT, check out my Patreon!</p>
+    <h3>Support the Project</h3>
+    <p>If you find this module helpful for your gaming sessions and wish to support ongoing open-source development for Foundry VTT, visit the Patreon page:</p>
     <a href="https://www.patreon.com/PhilsModules">
-        <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" width="200" />
+        <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patron" width="180" />
     </a>
-    <br><br>
-    <p><i>Made with ❤️ for the Foundry VTT Community</i></p>
 </div>

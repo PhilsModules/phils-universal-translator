@@ -1,54 +1,50 @@
-# 🧙‍♂️ Phil's Universal AI Translator – The "Grimoire of Laziness"
+# Functional Overview: Phil's Universal AI Translator
 
 <div align="right">
-  <a href="funktion.md">🇩🇪 Zum deutschen Grimoire der Faulheit wechseln</a>
+  <a href="funktion.md">Zur deutschen Funktionsübersicht wechseln</a>
 </div>
 
-Welcome to the club of relaxed Game Masters. You've chosen **Phil's Universal AI Translator**. Excellent choice.
-
-Perhaps you're sitting back with a coffee, wondering: *"How on earth does this wizardry actually work without expensive API keys, and why isn't my Foundry world blowing up in the process?"*
-
-Here is the deep dive under the hood – explained for people who love running epic campaigns, but get cold sweats at the sight of API invoices and raw JSON code.
+This overview explains how Phil's Universal AI Translator operates under the hood, how it avoids recurring API costs, and how it protects your game data throughout the translation lifecycle.
 
 ---
 
-## 🏗️ The Core Principle: The Biological Data Pipeline
+## The Core Concept: The Structured Local Pipeline
 
-Modern AI models like Google Gemini, ChatGPT, or Claude are phenomenal at translating fantasy and sci-fi lore. But direct API access costs money, requires credit cards, and locks accounts if you feed them a thick rulebook.
+Direct AI API integrations often introduce recurring subscription costs, usage limits, and account restrictions when working through extensive adventure books.
 
-The solution: **You are the pipeline!**
+Phil's Universal AI Translator solves this by decoupling translation from paid API endpoints:
 
-1. **The module preps everything into bite-sized packets:** It scans your document, protects Foundry entity links (`@UUID`, `@Embed`, roll formulas), injects campaign glossary terms, and constructs a finely tuned prompt.
-2. **Copy & Open AI:** 1 click on *"Copy Prompt & Open AI"* places the prompt onto your clipboard and launches your browser.
-3. **Paste (`CTRL + V`):** The AI does the heavy lifting.
-4. **Retrieve & Apply:** You copy the response, paste it back into the studio – and the module parses the JSON, heals character encoding, and updates your world documents in milliseconds!
-
----
-
-## 🛡️ The "Chastity Belt Protocol" (Link & Syntax Protection)
-
-AIs love being "creative". But with Foundry links like `@UUID[JournalEntry.abc123xyz]{The Crypt}`, creativity is fatal. If the AI tries to translate the internal database ID `abc123xyz`, the link is broken permanently.
-
-### How the module protects your links:
-- **LinkProtection Engine:** All links are detected and tagged before sending to the AI.
-- **Intelligent Reconstruction:** Even if an AI mangles an ID, the LinkProtection parser identifies the intended target and restores the valid link target.
-- **Display Label Translation:** The optional human-readable text inside the curly braces `{...}` is cleanly translated into your target language, while the technical target remains untouched.
+1. **Structured Preparation:** The module extracts your content, marks internal Foundry links (`@UUID`, `@Embed`, roll formulas) for protection, inserts relevant campaign glossary entries, and formats everything into a clean, optimized prompt.
+2. **Web AI Execution:** A single click copies the prompt to your clipboard and opens your chosen AI provider in your browser (such as Gemini or ChatGPT).
+3. **Execution:** The AI processes the prompt using its full conversational context window without incurring API charges.
+4. **Ingestion and Verification:** You paste the response back into the studio. The module validates the JSON structure, restores special character encoding, and updates your world documents.
 
 ---
 
-## 📚 The In-World Glossary: Bookkeeping on Autopilot
+## Link and Syntax Protection
 
-Nobody enjoys manually curating vocabulary spreadsheets. That's why the module compels the AI to handle this bookkeeping automatically during every translation run:
+Language models can occasionally alter technical identifiers. If a model modifies the internal ID in a link like `@UUID[JournalEntry.abc123xyz]{The Crypt}`, the connection to that document is broken.
 
-1. **Detection:** With every translation, the AI identifies new proper nouns, places, NPCs, and unique terms.
-2. **Categorization:** Terms are classified directly into 12 thematic categories (Locations, Deities, Organizations, Biomes, Species, Spells, etc.).
-3. **1-Click Import:** At Step 4 of the Studio, all new terms are imported into your in-world **`AI Glossar`** journal with a single click.
-4. **Consistency:** In the next chapter, the module references all accumulated terms to guarantee 100% naming consistency across your entire multi-year campaign!
+### Protection Measures:
+- **Link Tagging:** Every Foundry entity link is detected and protected prior to generating the prompt.
+- **Automated Repair:** The LinkProtection parser verifies all returned entity targets against original references and fixes corrupted IDs automatically.
+- **Display Label Handling:** Display names within curly brackets `{...}` are translated smoothly into the target language while the technical target path remains unchanged.
 
 ---
 
-## 🔒 The Parachute: 100% Reliable Backups
+## Automated In-World Glossary
 
-Because safety is paramount:
-- Before a single letter in your world is modified, the module automatically duplicates the original document as `Document Name (Backup)`.
-- If you ever wish to revert, a single click on **"Restore Backup"** resets the document to its pristine original state.
+Maintaining campaign consistency across long-running adventures requires disciplined terminology tracking:
+
+1. **Automatic Discovery:** The AI identifies newly introduced proper nouns, locations, factions, and rules concepts during each translation run.
+2. **Category Classification:** New terms are assigned to one of 12 distinct categories (Locations, Characters, Deities, Organizations, Biomes, Species, Cultures, Classes, Spells and Items, Rules, Languages, and General).
+3. **Seamless Integration:** Approved terms are automatically appended to your in-world **AI Glossar** journal.
+4. **Long-Term Consistency:** Subsequent translation passes reference this accumulated dictionary to ensure consistent naming across all chapters.
+
+---
+
+## Safety Backups
+
+Data safety is built into every operation:
+- Before any changes are committed, the module generates a complete duplicate snapshot labeled `Document Name (Backup)`.
+- If an update needs to be reverted, clicking **Restore Backup** restores the document to its exact previous state immediately.
