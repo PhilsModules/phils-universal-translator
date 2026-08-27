@@ -1,0 +1,100 @@
+<div class="universal-wizard-container">
+    <!-- Header Hero Banner -->
+    <div class="universal-wizard-hero">
+        <div class="universal-wizard-hero-icon">
+            <i class="fa-solid fa-server universal-pulse"></i>
+        </div>
+        <div class="universal-wizard-hero-text">
+            <h2>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.Title"}}</h2>
+            <p class="universal-wizard-subtitle">{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.Subtitle"}}</p>
+        </div>
+        <span class="universal-badge universal-badge-success">
+            <i class="fa-solid fa-shield-halved"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.BadgePrivate"}}
+        </span>
+    </div>
+
+    <div class="universal-wizard-content">
+        <!-- Privacy & Local-First Notice -->
+        <div class="universal-wizard-card">
+            <div class="universal-wizard-card-header">
+                <i class="fa-solid fa-microchip text-accent"></i>
+                <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LocalArchitectureTitle"}}</strong>
+            </div>
+            <p class="universal-wizard-description">
+                {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LocalArchitectureDesc"}}
+            </p>
+        </div>
+
+        <!-- Connection Settings -->
+        <div class="universal-wizard-card">
+            <div class="universal-wizard-card-header">
+                <i class="fa-solid fa-network-wired text-accent"></i>
+                <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.ConnectionHeader"}}</strong>
+            </div>
+
+            <div class="universal-wizard-form-group">
+                <label for="wizard-endpoint-input">
+                    <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.EndpointLabel"}}</strong>
+                </label>
+                <div class="universal-wizard-input-row">
+                    <input type="text" id="wizard-endpoint-input" class="universal-input" value="{{endpoint}}" placeholder="http://localhost:11434">
+                    <button type="button" class="universal-btn universal-btn-accent" data-action="testConnection">
+                        <i class="fa-solid fa-bolt"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.BtnTest"}}
+                    </button>
+                </div>
+                <small class="universal-text-muted">{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.EndpointHint"}}</small>
+            </div>
+
+            <!-- Live Status Alert -->
+            {{#if statusMessage}}
+            <div class="universal-alert {{#if isConnected}}universal-alert-success{{else}}universal-alert-warning{{/if}} universal-wizard-status">
+                <i class="fa-solid {{#if isConnected}}fa-circle-check{{else}}fa-circle-exclamation{{/if}}"></i>
+                <span>{{statusMessage}}</span>
+            </div>
+            {{/if}}
+
+            <div class="universal-wizard-form-group">
+                <label for="wizard-model-input">
+                    <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.ModelLabel"}}</strong>
+                </label>
+                {{#if availableModels.length}}
+                <select id="wizard-model-select" class="universal-select">
+                    {{#each availableModels}}
+                    <option value="{{this}}" {{#if (eq this ../model)}}selected{{/if}}>{{this}}</option>
+                    {{/each}}
+                </select>
+                {{else}}
+                <input type="text" id="wizard-model-input" class="universal-input" value="{{model}}" placeholder="llama3">
+                {{/if}}
+                <small class="universal-text-muted">{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.ModelHint"}}</small>
+            </div>
+        </div>
+
+        <!-- Copyright & Legal Private Use Disclaimer -->
+        <div class="universal-wizard-card universal-wizard-legal-card">
+            <div class="universal-wizard-card-header text-warning">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LegalTitle"}}</strong>
+            </div>
+            <div class="universal-wizard-legal-text">
+                <p>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LegalBody1"}}</p>
+                <p>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LegalBody2"}}</p>
+                <p class="text-warn"><i class="fa-solid fa-triangle-exclamation"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LegalBody3"}}</p>
+            </div>
+            <label class="universal-wizard-legal-check">
+                <input type="checkbox" id="wizard-legal-confirm" checked>
+                <span>{{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.LegalCheckbox"}}</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Footer Actions -->
+    <div class="universal-wizard-footer">
+        <button type="button" class="universal-btn" data-action="skipWizard">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.BtnManualMode"}}
+        </button>
+        <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="saveAndClose">
+            <i class="fa-solid fa-floppy-disk"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Wizard.BtnSaveAndConnect"}}
+        </button>
+    </div>
+</div>

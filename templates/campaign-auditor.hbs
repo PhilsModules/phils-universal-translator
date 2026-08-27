@@ -4,8 +4,8 @@
         <div class="universal-auditor-title-area">
             <i class="fas fa-shield-halved fa-2x text-accent"></i>
             <div>
-                <h2>Kampagnen-Integritätsprüfung &amp; Auditor</h2>
-                <p class="universal-auditor-subtitle">Automatischer Vollständigkeits-, Link-, Kodierungs- und Backup-Check für alle Journale deiner Kampagne</p>
+                <h2>{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Title"}}</h2>
+                <p class="universal-auditor-subtitle">{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Subtitle"}}</p>
             </div>
         </div>
 
@@ -13,7 +13,7 @@
             <div class="universal-auditor-health-score">{{audit.overallHealth}}%</div>
             <div class="universal-auditor-health-meta">
                 <span class="universal-auditor-health-label"><i class="fas {{healthIcon}}"></i> {{healthLabel}}</span>
-                <small>{{audit.totalCheckedPages}} Seiten geprüft</small>
+                <small>{{audit.totalCheckedPages}} {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.PagesCount"}}</small>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
             <div class="stat-info">
                 <span class="stat-value">{{audit.intactCount}}</span>
-                <span class="stat-name">100% Intakt &amp; Vollständig</span>
+                <span class="stat-name">{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Intact"}}</span>
             </div>
         </div>
 
@@ -32,7 +32,7 @@
             <div class="stat-icon"><i class="fas fa-exclamation-triangle"></i></div>
             <div class="stat-info">
                 <span class="stat-value">{{audit.warningCount}}</span>
-                <span class="stat-name">Warnungen (Umlaute / Links)</span>
+                <span class="stat-name">{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Warnings"}}</span>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
             <div class="stat-icon"><i class="fas fa-circle-xmark"></i></div>
             <div class="stat-info">
                 <span class="stat-value">{{audit.errorCount}}</span>
-                <span class="stat-name">Kritisch (Fehlende Chunks)</span>
+                <span class="stat-name">{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Errors"}}</span>
             </div>
         </div>
     </div>
@@ -48,20 +48,20 @@
     <!-- 1-Click Quick Repair Actions -->
     <div class="universal-auditor-actions-bar">
         <div class="actions-label">
-            <i class="fas fa-wand-magic-sparkles"></i> <strong>1-Klick Reparatur-Aktionen:</strong>
+            <i class="fas fa-wand-magic-sparkles"></i> <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.QuickRepairTitle"}}</strong>
         </div>
         <div class="actions-buttons">
-            <button type="button" class="universal-btn universal-btn-accent" data-action="repairBackups" title="Sichert alle Backup-Flags ab">
-                <i class="fas fa-wrench"></i> Backups absichern
+            <button type="button" class="universal-btn universal-btn-accent" data-action="repairBackups" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairBackupsHint"}}">
+                <i class="fas fa-wrench"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairBackups"}}
             </button>
-            <button type="button" class="universal-btn universal-btn-primary" data-action="repairLinks" title="Biegt Kompendium-Links auf Welt-Dokumente um">
-                <i class="fas fa-link"></i> Verlinkungen reparieren
+            <button type="button" class="universal-btn universal-btn-primary" data-action="repairLinks" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairLinksHint"}}">
+                <i class="fas fa-link"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairLinks"}}
             </button>
-            <button type="button" class="universal-btn universal-btn-secondary" data-action="repairMojibake" title="Repariert kaputte Umlaute und Sonderzeichen weltweit">
-                <i class="fas fa-font"></i> Umlaute reparieren
+            <button type="button" class="universal-btn universal-btn-secondary" data-action="repairMojibake" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairMojibakeHint"}}">
+                <i class="fas fa-font"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RepairMojibake"}}
             </button>
             <button type="button" class="universal-btn universal-btn-secondary" data-action="refreshAudit">
-                <i class="fas fa-rotate"></i> Neu scannen
+                <i class="fas fa-rotate"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Rescan"}}
             </button>
         </div>
     </div>
@@ -69,16 +69,16 @@
     <!-- Filter Tabs -->
     <div class="universal-auditor-filter-tabs">
         <button type="button" class="universal-auditor-filter-btn {{#if filterAllActive}}active{{/if}}" data-action="filterCategory" data-filter="all">
-            Alle Journale ({{audit.totalJournals}})
+            {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.FilterAll"}}
         </button>
         <button type="button" class="universal-auditor-filter-btn {{#if filterErrorActive}}active{{/if}}" data-action="filterCategory" data-filter="error">
-            🔴 Nur Fehler ({{audit.errorCount}})
+            {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.FilterErrors"}}
         </button>
         <button type="button" class="universal-auditor-filter-btn {{#if filterWarningActive}}active{{/if}}" data-action="filterCategory" data-filter="warning">
-            🟡 Nur Warnungen ({{audit.warningCount}})
+            {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.FilterWarnings"}}
         </button>
         <button type="button" class="universal-auditor-filter-btn {{#if filterMojibakeActive}}active{{/if}}" data-action="filterCategory" data-filter="mojibake">
-            🔤 Umlaute / Kodierung
+            {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.FilterMojibake"}}
         </button>
     </div>
 
@@ -90,14 +90,14 @@
                 <div class="journal-title-box">
                     <i class="fas fa-book text-accent"></i>
                     <strong>{{this.name}}</strong>
-                    <span class="journal-stats-badge">{{this.pageAudits.length}} Seiten</span>
+                    <span class="journal-stats-badge">{{this.pageAudits.length}} {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.PagesCount"}}</span>
                 </div>
                 <div class="journal-actions-box">
-                    <button type="button" class="universal-btn-small" data-action="openStudioForJournal" data-journal-id="{{this.id}}" title="Im Translation Studio öffnen">
-                        <i class="fas fa-arrow-up-right-from-square"></i> Im Studio öffnen
+                    <button type="button" class="universal-btn-small" data-action="openStudioForJournal" data-journal-id="{{this.id}}" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.OpenInStudioHint"}}">
+                        <i class="fas fa-arrow-up-right-from-square"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.OpenInStudio"}}
                     </button>
-                    <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreJournal" data-journal-id="{{this.id}}" title="Auf Backup-Stand zurücksetzen">
-                        <i class="fas fa-rotate-left"></i> Wiederherstellen
+                    <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreJournal" data-journal-id="{{this.id}}" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.RestoreHint"}}">
+                        <i class="fas fa-rotate-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Auditor.Restore"}}
                     </button>
                 </div>
             </div>

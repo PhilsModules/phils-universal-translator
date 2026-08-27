@@ -1,25 +1,25 @@
 <div class="universal-stats-container">
     <div class="universal-stats-header">
         <i class="fas fa-chart-line fa-2x text-accent"></i>
-        <h3>Universal Übersetzungs-Statistik</h3>
+        <h3>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsTitle"}}</h3>
     </div>
 
     <div class="universal-stats-grid">
         <div class="universal-stat-box">
             <span class="stat-num">{{stats.translatedWords}}</span>
-            <span class="stat-label">Übersetzte Wörter</span>
+            <span class="stat-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsTranslationWords"}}</span>
         </div>
         <div class="universal-stat-box">
             <span class="stat-num">{{stats.grammarWords}}</span>
-            <span class="stat-label">Lektorierte Wörter</span>
+            <span class="stat-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsGrammarWords"}}</span>
         </div>
         <div class="universal-stat-box stat-highlight">
-            <span class="stat-num">{{stats.hoursSaved}} Std.</span>
-            <span class="stat-label">Geschätzte Zeitersparnis</span>
+            <span class="stat-num">{{stats.hoursSaved}} {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.UnitHours"}}</span>
+            <span class="stat-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsHoursSaved"}}</span>
         </div>
     </div>
 
     <div class="universal-stats-footer">
-        <small>Berechnungsgrundlage: ca. 300 Wörter/Std. manuelle Übersetzung, ca. 1.000 Wörter/Std. Lektorat.</small>
+        <small>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsFooter"}}</small>
     </div>
 </div>

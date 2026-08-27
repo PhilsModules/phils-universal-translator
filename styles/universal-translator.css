@@ -677,3 +677,203 @@
     font-size: 0.85em;
     color: var(--universal-text-muted);
 }
+
+/* Header Button & Read-Aloud Icon Styles */
+.header-control.universal-red-translate-btn,
+.header-button.universal-red-translate-btn,
+.universal-red-translate-btn {
+    color: #ff5252 !important;
+    text-shadow: 0 0 6px rgba(255, 82, 82, 0.6);
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-control.universal-red-translate-btn i,
+.header-button.universal-red-translate-btn i,
+.universal-red-translate-btn i {
+    font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "Font Awesome 5 Free", "FontAwesome", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+    color: #ff5252 !important;
+    font-size: 1em;
+}
+
+.header-control.universal-red-translate-btn:hover,
+.header-button.universal-red-translate-btn:hover {
+    color: #ff7b7b !important;
+    text-shadow: 0 0 10px rgba(255, 82, 82, 0.9);
+}
+
+/* ==========================================================================
+   Local LLM Setup Wizard & Direct Translation Styles
+   ========================================================================== */
+
+.universal-wizard-window .window-content {
+    background: #12141a;
+    color: var(--universal-text);
+    padding: 0;
+    overflow-y: auto;
+}
+
+.universal-wizard-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 14px;
+}
+
+.universal-wizard-hero {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(155, 89, 182, 0.15));
+    border: 1px solid var(--universal-border);
+    border-radius: 8px;
+    padding: 14px 18px;
+}
+
+.universal-wizard-hero-icon {
+    font-size: 2.2em;
+    color: var(--universal-accent);
+}
+
+.universal-wizard-hero-text h2 {
+    margin: 0;
+    font-size: 1.3em;
+    border-bottom: none;
+    color: #fff;
+}
+
+.universal-wizard-subtitle {
+    margin: 4px 0 0 0;
+    font-size: 0.85em;
+    color: var(--universal-text-muted);
+}
+
+.universal-wizard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.universal-wizard-card {
+    background: var(--universal-card-bg);
+    border: 1px solid var(--universal-border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.universal-wizard-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1em;
+}
+
+.universal-wizard-description {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: var(--universal-text);
+}
+
+.universal-wizard-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.universal-wizard-input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.universal-wizard-input-row input {
+    flex: 1;
+}
+
+.universal-wizard-status {
+    margin-top: 4px;
+    padding: 8px 12px;
+}
+
+.universal-wizard-legal-card {
+    border-color: rgba(243, 156, 18, 0.4);
+    background: rgba(243, 156, 18, 0.05);
+}
+
+.universal-wizard-legal-text {
+    font-size: 0.85em;
+    line-height: 1.4;
+    color: var(--universal-text-muted);
+}
+
+.universal-wizard-legal-text p {
+    margin: 0 0 6px 0;
+}
+
+.universal-wizard-legal-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85em;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.universal-wizard-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--universal-border);
+}
+
+/* Tool button in Translation Studio header */
+.universal-ts-btn-ollama {
+    background: rgba(46, 204, 113, 0.15) !important;
+    border-color: rgba(46, 204, 113, 0.5) !important;
+    color: #2ecc71 !important;
+}
+
+.universal-ts-btn-ollama:hover {
+    background: rgba(46, 204, 113, 0.3) !important;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+
+/* Direct local translation action button */
+.universal-btn-direct-translate {
+    background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
+    border-color: #2ecc71 !important;
+    color: #fff !important;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+.universal-btn-direct-translate:hover {
+    background: linear-gradient(135deg, #2ecc71, #27ae60) !important;
+    box-shadow: 0 0 14px rgba(46, 204, 113, 0.6);
+}
+
+/* Legal notice banner */
+.universal-ts-legal-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.75em;
+    color: var(--universal-text-muted);
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    text-align: center;
+}
+
+

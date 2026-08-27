@@ -3,17 +3,17 @@
         <div class="universal-glossary-search-bar">
             <div class="search-field-wrapper">
                 <i class="fas fa-magnifying-glass search-field-icon"></i>
-                <input type="text" id="universal-glossary-search-input" class="universal-input" value="{{searchQuery}}" placeholder="Begriff im Glossar suchen (Englisch oder Deutsch)..." autofocus>
+                <input type="text" id="universal-glossary-search-input" class="universal-input" value="{{searchQuery}}" placeholder="{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.SearchPlaceholder"}}" autofocus>
                 {{#if searchQuery}}
                 <button type="button" class="clear-search-btn" data-action="clearSearch"><i class="fas fa-times"></i></button>
                 {{/if}}
             </div>
 
             <button type="button" class="universal-btn universal-btn-primary" data-action="addTerm">
-                <i class="fas fa-plus"></i> Begriff hinzufügen
+                <i class="fas fa-plus"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.BtnAddTerm"}}
             </button>
             <button type="button" class="universal-btn" data-action="openGlossaryJournal">
-                <i class="fas fa-book-open"></i> Journal öffnen
+                <i class="fas fa-book-open"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.BtnOpenJournal"}}
             </button>
         </div>
 
@@ -33,10 +33,10 @@
         <table class="universal-glossary-table">
             <thead>
                 <tr>
-                    <th style="width: 35%;">Original (Englisch)</th>
-                    <th style="width: 35%;">Übersetzung (Deutsch)</th>
-                    <th style="width: 20%;">Kategorie</th>
-                    <th style="width: 10%; text-align: right;">Aktionen</th>
+                    <th style="width: 35%;">{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.ThOriginal"}}</th>
+                    <th style="width: 35%;">{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.ThTranslation"}}</th>
+                    <th style="width: 20%;">{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.ThCategory"}}</th>
+                    <th style="width: 10%; text-align: right;">{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.ThActions"}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,15 +46,15 @@
                     <td>
                         {{this.translation}}
                         {{#if this.isProperName}}
-                        <span class="universal-badge universal-badge-small" style="color: #e67e22;">Eigenname</span>
+                        <span class="universal-badge universal-badge-small" style="color: #e67e22;">{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.ProperName"}}</span>
                         {{/if}}
                     </td>
                     <td><span class="universal-badge">{{this.category}}</span></td>
                     <td style="text-align: right;">
-                        <button type="button" class="universal-btn-icon" data-action="editTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" data-trans="{{this.translation}}" title="Bearbeiten">
+                        <button type="button" class="universal-btn-icon" data-action="editTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" data-trans="{{this.translation}}" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.Edit"}}">
                             <i class="fas fa-pen"></i>
                         </button>
-                        <button type="button" class="universal-btn-icon text-danger" data-action="deleteTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" title="Löschen">
+                        <button type="button" class="universal-btn-icon text-danger" data-action="deleteTerm" data-page-id="{{this.pageId}}" data-orig="{{this.original}}" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.Delete"}}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </td>
@@ -65,7 +65,7 @@
         {{else}}
         <div class="universal-search-empty">
             <i class="fas fa-book-bookmark fa-2x"></i>
-            <p>Keine Begriffe gefunden.</p>
+            <p>{{localize "PHILS_UNIVERSAL_TRANSLATE.Glossary.Empty"}}</p>
         </div>
         {{/if}}
     </div>

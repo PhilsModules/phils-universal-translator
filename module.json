@@ -1,8 +1,8 @@
 {
   "id": "phils-universal-translator",
   "title": "Phil's Universal Translator",
-  "description": "Universal, AI-powered multilingual translation helper for any tabletop RPG system in Foundry VTT (v14 ready) featuring dynamic lore glossary, update-proof translation memory, non-destructive runtime overlay, narrative read-aloud translation, campaign auditor, and side-by-side diff previews.",
-  "version": "1.0.0",
+  "description": "A local translation assistant and workflow utility for personal Foundry VTT game preparation with zero API costs, connecting directly to local language models (Ollama/LocalAI) or external consultation assistants with full link protection and lore glossary support.",
+  "version": "1.0.2",
   "compatibility": {
     "minimum": "12",
     "verified": "14"
@@ -21,14 +21,14 @@
   ],
   "languages": [
     {
-      "lang": "de",
-      "name": "Deutsch",
-      "path": "languages/de.json"
-    },
-    {
       "lang": "en",
       "name": "English",
       "path": "languages/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "languages/de.json"
     }
   ],
   "url": "https://github.com/PhilsModules/phils-universal-translator",

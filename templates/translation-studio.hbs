@@ -3,39 +3,42 @@
     <div class="universal-ts-top-bar">
         <div class="universal-ts-brand">
             <i class="fas fa-language text-accent universal-pulse"></i>
-            <span class="universal-ts-brand-title">Universal Translation Studio</span>
+            <span class="universal-ts-brand-title">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StudioTitle"}}</span>
             <span class="universal-badge universal-badge-system">{{systemName}}</span>
         </div>
 
         <div class="universal-ts-header-tools">
-            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openAuditor" title="Kampagnen-Auditor: Scannt die gesamte Welt auf Vollständigkeit, Links & Umlaute">
-                <i class="fas fa-shield-halved"></i> Auditor
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-ollama" data-action="openLocalLlmSetup" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.OllamaSetupTooltip"}}">
+                <i class="fa-solid fa-server"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnOllamaSetup"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="smartSync" title="Smart-Sync: Wendet unveränderte Übersetzungen nach einem Update blitzschnell wieder an">
-                <i class="fas fa-bolt"></i> Smart-Sync
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openAuditor" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.AuditorTooltip"}}">
+                <i class="fas fa-shield-halved"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnAuditor"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="remapLinks" title="Smart Link Remap: Biegt Kompendium-Links (@UUID/@Embed) auf bereits existierende Welt-Dokumente um">
-                <i class="fas fa-link"></i> Links Sync
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="smartSync" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.SmartSyncTooltip"}}">
+                <i class="fas fa-bolt"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSmartSync"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="exportMemory" title="Übersetzungs-Backup als JSON-Datei exportieren & sichern">
-                <i class="fas fa-download"></i> Backup
+            <button type="button" class="universal-ts-btn-tool" data-action="remapLinks" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.RemapLinksTooltip"}}">
+                <i class="fas fa-link"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnRemapLinks"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="importMemory" title="Gesichertes Übersetzungs-Backup importieren">
-                <i class="fas fa-upload"></i> Import
+            <button type="button" class="universal-ts-btn-tool" data-action="exportMemory" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ExportBackupTooltip"}}">
+                <i class="fas fa-download"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnExportBackup"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="clearMemory" title="Translation Memory & gespeicherte Übersetzungen komplett auf 0 zurücksetzen">
-                <i class="fas fa-trash-arrow-up"></i> Memory leeren
+            <button type="button" class="universal-ts-btn-tool" data-action="importMemory" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ImportBackupTooltip"}}">
+                <i class="fas fa-upload"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnImportBackup"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="openSearch" title="Journal-weite Volltextsuche & Korrektur">
-                <i class="fas fa-search"></i> Suche
+            <button type="button" class="universal-ts-btn-tool" data-action="clearMemory" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ClearMemoryTooltip"}}">
+                <i class="fas fa-trash-arrow-up"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnClearMemory"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openGlossarySearch" title="AI Glossar durchsuchen, filtern, bearbeiten & Begriffe verwalten">
-                <i class="fas fa-book-bookmark"></i> Glossar
+            <button type="button" class="universal-ts-btn-tool" data-action="openSearch" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.SearchTooltip"}}">
+                <i class="fas fa-search"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSearch"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="sortGlossaryDialog" title="AI Glossar alphabetisch sortieren (A–Z / Z–A)">
-                <i class="fas fa-arrow-down-a-z"></i> Sortieren
+            <button type="button" class="universal-ts-btn-tool universal-ts-btn-sync" data-action="openGlossarySearch" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.GlossaryTooltip"}}">
+                <i class="fas fa-book-bookmark"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnGlossary"}}
             </button>
-            <button type="button" class="universal-ts-btn-tool" data-action="openStats" title="Statistik öffnen">
+            <button type="button" class="universal-ts-btn-tool" data-action="sortGlossaryDialog" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.SortGlossaryTooltip"}}">
+                <i class="fas fa-arrow-down-a-z"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSortGlossary"}}
+            </button>
+            <button type="button" class="universal-ts-btn-tool" data-action="openStats" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.StatsTooltip"}}">
                 <i class="fas fa-chart-line"></i>
             </button>
         </div>
@@ -45,22 +48,22 @@
     <div class="universal-ts-stepper">
         <div class="universal-ts-step {{#if isStep1}}active{{/if}} {{#if (gt step 1)}}completed{{/if}}" data-action="jumpToStep" data-step="1">
             <span class="universal-ts-step-num">1</span>
-            <span class="universal-ts-step-label">Dokument & Auswahl</span>
+            <span class="universal-ts-step-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step1Title"}}</span>
         </div>
         <div class="universal-ts-step-divider"></div>
         <div class="universal-ts-step {{#if isStep2}}active{{/if}} {{#if (gt step 2)}}completed{{/if}}" data-action="jumpToStep" data-step="2">
             <span class="universal-ts-step-num">2</span>
-            <span class="universal-ts-step-label">Prompt & KI</span>
+            <span class="universal-ts-step-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step2Title"}}</span>
         </div>
         <div class="universal-ts-step-divider"></div>
         <div class="universal-ts-step {{#if isStep3}}active{{/if}} {{#if (gt step 3)}}completed{{/if}}" data-action="jumpToStep" data-step="3">
             <span class="universal-ts-step-num">3</span>
-            <span class="universal-ts-step-label">Antwort</span>
+            <span class="universal-ts-step-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step3Title"}}</span>
         </div>
         <div class="universal-ts-step-divider"></div>
         <div class="universal-ts-step {{#if isStep4}}active{{/if}}" data-action="jumpToStep" data-step="4">
             <span class="universal-ts-step-num">4</span>
-            <span class="universal-ts-step-label">Vorschau & Speichern</span>
+            <span class="universal-ts-step-label">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step4Title"}}</span>
         </div>
     </div>
 
@@ -72,21 +75,21 @@
             <div class="universal-ts-mode-selector">
                 <label class="universal-ts-mode-label {{#if isModeTranslate}}selected{{/if}}">
                     <input type="radio" name="mode" value="translate" {{#if isModeTranslate}}checked{{/if}}>
-                    <i class="fas fa-language"></i> Übersetzen
+                    <i class="fas fa-language"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ModeTranslate"}}
                 </label>
                 <label class="universal-ts-mode-label {{#if isModeGrammar}}selected{{/if}}">
                     <input type="radio" name="mode" value="grammar" {{#if isModeGrammar}}checked{{/if}}>
-                    <i class="fas fa-spell-check"></i> Lektorat
+                    <i class="fas fa-spell-check"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ModeGrammar"}}
                 </label>
                 <label class="universal-ts-mode-label {{#if isModeGlossary}}selected{{/if}}">
                     <input type="radio" name="mode" value="glossary" {{#if isModeGlossary}}checked{{/if}}>
-                    <i class="fas fa-book-atlas"></i> Glossar extrahieren
+                    <i class="fas fa-book-atlas"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ModeGlossary"}}
                 </label>
             </div>
 
             <div class="universal-ts-selectors-group">
                 <div class="universal-ts-lang-selector">
-                    <label for="universal-target-lang-select"><i class="fas fa-globe text-accent"></i> Zielsprache:</label>
+                    <label for="universal-target-lang-select"><i class="fas fa-globe text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelTargetLanguage"}}</label>
                     <select id="universal-target-lang-select" class="universal-select" data-action="changeTargetLanguage">
                         {{#each languageOptions}}
                         <option value="{{this.code}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
@@ -95,7 +98,7 @@
                 </div>
 
                 <div class="universal-ts-genre-selector">
-                    <label for="universal-genre-select"><i class="fas fa-hat-wizard text-accent"></i> Genre/Setting:</label>
+                    <label for="universal-genre-select"><i class="fas fa-hat-wizard text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelSettingContext"}}</label>
                     <select id="universal-genre-select" class="universal-select" data-action="changeSettingPreset">
                         {{#each settingPresets}}
                         <option value="{{this.id}}" {{#if this.selected}}selected{{/if}}>{{this.label}}</option>
@@ -110,26 +113,26 @@
                 <div class="universal-ts-doc-title">
                     {{#if isCompendium}}
                         <i class="fas fa-boxes-stacked text-accent"></i> <strong>{{docName}}</strong>
-                        <span class="universal-badge universal-badge-info">Kompendium</span>
+                        <span class="universal-badge universal-badge-info">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeCompendium"}}</span>
                     {{else if isFolder}}
                         <i class="fas fa-folder-open text-accent"></i> <strong>{{docName}}</strong>
-                        <span class="universal-badge universal-badge-info">Ordner</span>
+                        <span class="universal-badge universal-badge-info">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeFolder"}}</span>
                     {{else}}
                         <i class="fas fa-book-open text-accent"></i> <strong>{{docName}}</strong>
                     {{/if}}
                 </div>
                 <div class="universal-ts-doc-actions">
-                    <button type="button" class="universal-btn-small" data-action="clearDocument" title="Anderes Dokument wählen">
-                        <i class="fas fa-arrow-right-from-bracket"></i> Wechseln
+                    <button type="button" class="universal-btn-small" data-action="clearDocument" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSwitchDocHint"}}">
+                        <i class="fas fa-arrow-right-from-bracket"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSwitchDoc"}}
                     </button>
                     {{#if hasBackup}}
-                        <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreBackup" title="Originalzustand aus Backup wiederherstellen">
-                            <i class="fas fa-rotate-left"></i> Backup wiederherstellen
+                        <button type="button" class="universal-btn-small universal-btn-warning" data-action="restoreBackup" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnRestoreBackupHint"}}">
+                            <i class="fas fa-rotate-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnRestoreBackup"}}
                         </button>
                     {{/if}}
-                    <button type="button" class="universal-btn-small" data-action="toggleSelect"><i class="fas fa-check-double"></i> Alle/Keine</button>
-                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectUnprocessed" title="Wählt nur Seiten aus, die noch nicht übersetzt wurden"><i class="fas fa-filter"></i> Nur nicht übersetzt</button>
-                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectNext"><i class="fas fa-forward"></i> Nächster Batch</button>
+                    <button type="button" class="universal-btn-small" data-action="toggleSelect"><i class="fas fa-check-double"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnToggleAll"}}</button>
+                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectUnprocessed" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSelectUnprocessedHint"}}"><i class="fas fa-filter"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnSelectUnprocessed"}}</button>
+                    <button type="button" class="universal-btn-small universal-btn-accent" data-action="selectNext"><i class="fas fa-forward"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnNextBatch"}}</button>
                 </div>
             </div>
 
@@ -138,12 +141,12 @@
                 <div class="universal-ts-capacity-header">
                     <span>
                         <i class="fas fa-gauge-high text-accent"></i> 
-                        <strong>Ausgewählt:</strong> <span class="universal-ts-capacity-count">{{currentBatchChars}}</span> / {{maxCharLimit}} Zeichen
+                        <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelSelected"}}</strong> <span class="universal-ts-capacity-count">{{currentBatchChars}}</span> / {{maxCharLimit}} {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelChars"}}
                         <span class="universal-badge {{#if (gt totalBatchParts 1)}}universal-badge-warn{{else}}universal-badge-success{{/if}}">
-                            <i class="fas fa-puzzle-piece"></i> {{totalBatchParts}} {{#if (gt totalBatchParts 1)}}Batches{{else}}Batch{{/if}}
+                            <i class="fas fa-puzzle-piece"></i> {{totalBatchParts}} {{#if (gt totalBatchParts 1)}}{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelBatches"}}{{else}}{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelBatch"}}{{/if}}
                         </span>
                     </span>
-                    <span class="universal-ts-capacity-percent">{{batchPercent}}% Kapazität</span>
+                    <span class="universal-ts-capacity-percent">{{batchPercent}}% {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelCapacity"}}</span>
                 </div>
                 <div class="universal-ts-capacity-track">
                     <div class="universal-ts-capacity-fill {{batchStatusColor}}" style="width: {{batchPercent}}%;"></div>
@@ -160,14 +163,14 @@
                     </label>
 
                     <div class="universal-ts-item-meta">
-                        <span class="universal-ts-item-size {{#if this.isHuge}}text-warn{{/if}}" title="{{this.charCount}} Zeichen">
+                        <span class="universal-ts-item-size {{#if this.isHuge}}text-warn{{/if}}" title="{{this.charCount}} {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelChars"}}">
                             <i class="fas fa-font"></i> {{this.formattedChars}}
                         </span>
                         {{#if this.isProcessed}}
-                            <span class="universal-badge universal-badge-success" title="Bereits übersetzt"><i class="fas fa-check"></i> Übersetzt</span>
+                            <span class="universal-badge universal-badge-success" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeProcessedHint"}}"><i class="fas fa-check"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeProcessed"}}</span>
                         {{/if}}
                         {{#if this.isGrammarChecked}}
-                            <span class="universal-badge universal-badge-info" title="Bereits lektoriert"><i class="fas fa-spell-check"></i> Lektoriert</span>
+                            <span class="universal-badge universal-badge-info" title="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeGrammarHint"}}"><i class="fas fa-spell-check"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BadgeGrammar"}}</span>
                         {{/if}}
                     </div>
                 </div>
@@ -176,27 +179,27 @@
 
             <!-- Custom Instructions -->
             <div class="universal-ts-custom-instruct-card">
-                <label for="universal-custom-instruct"><i class="fas fa-pen-nib text-accent"></i> Optionale Zusatzanweisungen für diesen Durchgang:</label>
-                <input type="text" id="universal-custom-instruct" class="universal-input" value="{{customInstruct}}" placeholder="z.B. 'Informelles Du verwenden', 'Klassennamen prägnant übersetzen', 'Düsterer Ton'...">
+                <label for="universal-custom-instruct"><i class="fas fa-pen-nib text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelCustomInstruct"}}</label>
+                <input type="text" id="universal-custom-instruct" class="universal-input" value="{{customInstruct}}" placeholder="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.PlaceholderCustomInstruct"}}">
             </div>
 
             <div class="universal-ts-footer-actions">
                 <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="generatePrompt">
-                    <i class="fas fa-wand-magic-sparkles"></i> Prompt generieren & Weiter
+                    <i class="fas fa-wand-magic-sparkles"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnGeneratePrompt"}}
                 </button>
             </div>
         {{else}}
             <!-- Drop Zone when no document is loaded -->
             <div class="universal-drop-zone">
                 <i class="fas fa-cloud-arrow-up universal-drop-icon"></i>
-                <h3>Dokument oder Kompendium hier ablegen</h3>
-                <p>Ziehe ein Journal, einen Ordner, ein Item oder ein Kompendium-Pack aus der Seitenleiste direkt hierher.</p>
+                <h3>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.DropZone"}}</h3>
+                <p>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.SelectJournalHelp"}}</p>
 
                 {{#if compendiumPacks.length}}
                 <div class="universal-drop-fallback">
-                    <label for="universal-pack-select">Oder Kompendium auswählen:</label>
+                    <label for="universal-pack-select">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelSelectCompendium"}}</label>
                     <select id="universal-pack-select" class="universal-select" data-action="selectCompendium">
-                        <option value="">-- Kompendium-Pack wählen --</option>
+                        <option value="">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.OptionSelectCompendium"}}</option>
                         {{#each compendiumPacks}}
                         <option value="{{this.id}}">{{this.label}}</option>
                         {{/each}}
@@ -212,34 +215,43 @@
     {{#if isStep2}}
     <div class="universal-ts-card">
         <div class="universal-ts-step-header">
-            <h3><i class="fas fa-terminal text-accent"></i> 2. Generierter Prompt für {{aiProviderName}}</h3>
+            <h3><i class="fas fa-terminal text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step2PromptFor"}} {{aiProviderName}}</h3>
             
             {{#if hasMultipleParts}}
             <div class="universal-ts-batch-nav">
                 <button type="button" class="universal-btn-small" data-action="prevBatchPart" {{#if (eq currentBatchPart 1)}}disabled{{/if}}>
-                    <i class="fas fa-chevron-left"></i> Vorheriger Teil
+                    <i class="fas fa-chevron-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnPrevPart"}}
                 </button>
-                <span class="universal-badge universal-badge-info">Teil {{currentBatchPart}} von {{totalBatchParts}}</span>
+                <span class="universal-badge universal-badge-info">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelPart"}} {{currentBatchPart}} {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LabelOf"}} {{totalBatchParts}}</span>
                 <button type="button" class="universal-btn-small" data-action="nextBatchPart" {{#if (eq currentBatchPart totalBatchParts)}}disabled{{/if}}>
-                    Nächster Teil <i class="fas fa-chevron-right"></i>
+                    {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnNextPart"}} <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
             {{/if}}
         </div>
+
+        {{#if isDirectTranslating}}
+        <div class="universal-alert universal-alert-info universal-pulse" style="margin-bottom: 10px;">
+            <i class="fa-solid fa-spinner fa-spin"></i> <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnDirectTranslateLoading"}}</strong> ({{localLlmModel}} @ {{localLlmEndpoint}})
+        </div>
+        {{/if}}
 
         <div class="universal-ts-prompt-box">
             <textarea id="universal-prompt-text" class="universal-textarea" readonly rows="16">{{generatedPrompt}}</textarea>
         </div>
 
         <div class="universal-ts-footer-actions flexrow">
-            <button type="button" class="universal-btn" data-action="backToStep1">
-                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 1
+            <button type="button" class="universal-btn" data-action="backToStep1" {{#if isDirectTranslating}}disabled{{/if}}>
+                <i class="fas fa-arrow-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnBackToStep1"}}
             </button>
-            <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="copyPromptAndOpenAi">
-                <i class="fas fa-copy"></i> Prompt kopieren & {{aiProviderName}} öffnen
+            <button type="button" class="universal-btn universal-btn-primary universal-btn-large universal-btn-direct-translate" data-action="executeDirectLocalTranslation" {{#if isDirectTranslating}}disabled{{/if}}>
+                <i class="fa-solid fa-bolt"></i> {{#if isDirectTranslating}}{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnDirectTranslateLoading"}}{{else}}{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnDirectTranslate"}}{{/if}}
             </button>
-            <button type="button" class="universal-btn universal-btn-accent" data-action="goToStep3">
-                Weiter zu Schritt 3 <i class="fas fa-arrow-right"></i>
+            <button type="button" class="universal-btn universal-btn-secondary" data-action="copyPromptAndOpenAi" {{#if isDirectTranslating}}disabled{{/if}}>
+                <i class="fas fa-copy"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnCopyPromptAndOpenAi"}} {{aiProviderName}}
+            </button>
+            <button type="button" class="universal-btn universal-btn-accent" data-action="goToStep3" {{#if isDirectTranslating}}disabled{{/if}}>
+                {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnGoToStep3"}} <i class="fas fa-arrow-right"></i>
             </button>
         </div>
     </div>
@@ -249,26 +261,26 @@
     {{#if isStep3}}
     <div class="universal-ts-card">
         <div class="universal-ts-step-header">
-            <h3><i class="fas fa-paste text-accent"></i> 3. Antwort der KI einfügen</h3>
-            <span class="universal-badge universal-badge-info">Füge die vollständige Antwort aus {{aiProviderName}} ein</span>
+            <h3><i class="fas fa-paste text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step3PasteTitle"}}</h3>
+            <span class="universal-badge universal-badge-info">{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step3PasteBadge"}} {{aiProviderName}}</span>
         </div>
 
         {{#if parseError}}
         <div class="universal-alert universal-alert-error">
-            <i class="fas fa-triangle-exclamation"></i> <strong>Fehler beim Parsen:</strong> {{parseError}}
+            <i class="fas fa-triangle-exclamation"></i> <strong>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.ErrorParsing"}}</strong> {{parseError}}
         </div>
         {{/if}}
 
         <div class="universal-ts-paste-box">
-            <textarea id="universal-paste-input" class="universal-textarea" rows="16" placeholder="Füge hier das von der KI ausgegebene JSON (```json ... ```) ein..."></textarea>
+            <textarea id="universal-paste-input" class="universal-textarea" rows="16" placeholder="{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.PlaceholderPaste"}}"></textarea>
         </div>
 
         <div class="universal-ts-footer-actions flexrow">
             <button type="button" class="universal-btn" data-action="backToStep2">
-                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 2
+                <i class="fas fa-arrow-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnBackToStep2"}}
             </button>
             <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="analyzePaste">
-                <i class="fas fa-magnifying-glass"></i> Antwort analysieren & Prüfen
+                <i class="fas fa-magnifying-glass"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnAnalyzePaste"}}
             </button>
         </div>
     </div>
@@ -278,14 +290,14 @@
     {{#if isStep4}}
     <div class="universal-ts-card">
         <div class="universal-ts-step-header">
-            <h3><i class="fas fa-table-columns text-accent"></i> 4. Vorschau & Diff-Vergleich</h3>
-            <span class="universal-badge universal-badge-success">{{previewData.diffs.length}} Einträge bereit</span>
+            <h3><i class="fas fa-table-columns text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Step4PreviewTitle"}}</h3>
+            <span class="universal-badge universal-badge-success">{{previewData.diffs.length}} {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.EntriesReady"}}</span>
         </div>
 
         <div class="universal-ts-diff-layout">
             <!-- Sidebar with translated pages -->
             <div class="universal-ts-diff-sidebar">
-                <h4>Einträge:</h4>
+                <h4>{{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Entries"}}</h4>
                 <div class="universal-ts-diff-nav">
                     {{#each previewData.diffs}}
                     <button type="button" class="universal-ts-diff-nav-btn {{#if (eq ../selectedDiffPageId this.id)}}active{{/if}}" data-action="selectDiffPage" data-page-id="{{this.id}}">
@@ -296,7 +308,7 @@
 
                 {{#if previewData.newTerms.length}}
                 <div class="universal-ts-new-terms-card">
-                    <h4><i class="fas fa-book-bookmark text-accent"></i> Neue Glossar-Begriffe:</h4>
+                    <h4><i class="fas fa-book-bookmark text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.NewGlossaryTerms"}}</h4>
                     <div class="universal-ts-terms-list">
                         {{#each previewData.newTerms}}
                         <div class="universal-ts-term-item">
@@ -315,7 +327,7 @@
                 <div class="universal-ts-diff-view">
                     <div class="universal-ts-diff-col">
                         <div class="universal-ts-diff-col-header">
-                            <i class="fas fa-file-lines"></i> Original: {{activeDiffItem.origName}}
+                            <i class="fas fa-file-lines"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Original"}} {{activeDiffItem.origName}}
                         </div>
                         <div class="universal-ts-diff-body">
                             {{{activeDiffItem.origText}}}
@@ -324,7 +336,7 @@
 
                     <div class="universal-ts-diff-col">
                         <div class="universal-ts-diff-col-header text-accent">
-                            <i class="fas fa-check-double"></i> Übersetzung: {{activeDiffItem.name}}
+                            <i class="fas fa-check-double"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.Translation"}} {{activeDiffItem.name}}
                         </div>
                         <div class="universal-ts-diff-body">
                             {{{activeDiffItem.transText}}}
@@ -337,11 +349,11 @@
 
         {{#if previewData.aiNotes.length}}
         <div class="universal-ts-notes-card">
-            <h4><i class="fas fa-circle-info text-accent"></i> KI-Hinweise zu mehrdeutigen Passagen:</h4>
+            <h4><i class="fas fa-circle-info text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.AiNotesTitle"}}</h4>
             {{#each previewData.aiNotes}}
             <div class="universal-ts-note-item">
                 <span class="universal-badge">{{this.context}}</span>
-                <em>"{{this.original}}"</em>: {{this.note}} (Empfehlung: {{this.suggestion}})
+                <em>"{{this.original}}"</em>: {{this.note}} ({{this.suggestion}})
             </div>
             {{/each}}
         </div>
@@ -349,17 +361,22 @@
 
         <div class="universal-ts-footer-actions flexrow">
             <button type="button" class="universal-btn" data-action="backToStep3">
-                <i class="fas fa-arrow-left"></i> Zurück zu Schritt 3
+                <i class="fas fa-arrow-left"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnBackToStep3"}}
             </button>
             <button type="button" class="universal-btn universal-btn-primary universal-btn-large" data-action="applyFinalUpdate">
-                <i class="fas fa-floppy-disk"></i> Änderungen anwenden & Speichern
+                <i class="fas fa-floppy-disk"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnApplyFinalUpdate"}}
             </button>
             {{#if hasMultipleParts}}
             <button type="button" class="universal-btn universal-btn-accent" data-action="applyAndContinue">
-                Speichern & Nächsten Teil laden <i class="fas fa-forward"></i>
+                {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.BtnApplyAndContinue"}} <i class="fas fa-forward"></i>
             </button>
             {{/if}}
         </div>
     </div>
     {{/if}}
+
+    <!-- Subtle Legal & Private Use Banner -->
+    <div class="universal-ts-legal-banner">
+        <i class="fa-solid fa-scale-balanced text-accent"></i> {{localize "PHILS_UNIVERSAL_TRANSLATE.UI.LegalNoticeBanner"}}
+    </div>
 </div>
