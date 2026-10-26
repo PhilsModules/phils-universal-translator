@@ -22,7 +22,7 @@
 
 <br>
 
-<a href="#english-documentation">English Documentation</a> | <a href="#deutsche-dokumentation">Deutsche Dokumentation</a>
+<a href="#english-documentation"><img src="https://img.shields.io/badge/%20-English_Documentation-black?style=for-the-badge&logo=united-kingdom&logoColor=white" alt="English Documentation"></a> <a href="#deutsche-dokumentation"><img src="https://img.shields.io/badge/%20-Deutsche_Dokumentation-black?style=for-the-badge&logo=germany&logoColor=red" alt="Deutsche Dokumentation"></a> <a href="#-more-modules-by-phil--meine-weiteren-module"><img src="https://img.shields.io/badge/%20-More_Modules_%2F_Weitere_Module-black?style=for-the-badge&logo=github&logoColor=white" alt="More Modules / Weitere Module"></a>
 </div>
 
 <br>
